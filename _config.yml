@@ -1,0 +1,11 @@
+name: Amey Kamat
+description: Official Website of Amey Kamat
+author: Amey Kamat
+author_email: ask5332@gmail.com
+category_dir: /
+baseurl:
+url: http://ameykamat.github.io/
+markdown: rdiscount
+permalink: pretty
+paginate: 3
+exclude: [README.md]
