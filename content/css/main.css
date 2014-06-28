@@ -1,0 +1,67 @@
+h2{
+	font-weight: bold;
+	font-family: Times New Roman;
+}
+
+p{
+	font-size: 17px;
+	color: #585858;
+}
+
+ul.body-list{
+	font-size: 17px;
+	color: #585858;
+}
+
+.viewport{
+	height: 100vh;
+}
+
+a:link{
+	color: black;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a:visited{
+	color: black;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a:hover{
+	color: black;
+	color: #993300;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a:active{
+	color: black;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+div.footer{
+	background-color: #333333;
+}
+
+div.footer p{
+	color: white;
+}
+
+div.footer a:link{
+	color: white;
+}
+
+div.footer a:visited{
+	color: white;
+}
+
+div.footer a:hover{
+	color: #993300;
+}
+
+div.footer a:active{
+	color: white;
+}

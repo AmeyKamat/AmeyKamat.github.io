@@ -7,7 +7,7 @@
         <title>{% if page.title %}{{ page.title }} | {% endif %} {{ site.name }}</title>
 
         <!-- Bootstrap css -->
-        <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link href="content/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -16,8 +16,11 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
         
+        <!-- Font Awesome css -->
+        <link rel="stylesheet" href="content/lib/font-awesome/css/font-awesome.min.css">
+        
         <!-- Custom css file -->
-        <link href="css/main.css" rel="stylesheet">
+        <link href="content/css/main.css" rel="stylesheet">
         
     </head>
     <body>
@@ -25,10 +28,10 @@
 			<nav class="navbar navbar-default" role="navigation">
 				<div class="container">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a href="#">Home</a></li>
+						<li><a href="#"><i class="fa fa-home"></i>&nbsp;Home</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								My Activities
+								<i class="fa fa-puzzle-piece"></i>&nbsp;My Activities
 								<b class="caret"></b>
 							</a>
 							<ul class="dropdown-menu">
@@ -38,10 +41,10 @@
 								<li><a href="#">Initiatives</a></li>
 							</ul>
 						</li>
-						<li><a href="http://thehybridspices.blogspot.in">Blog</a></li>
+						<li><a href="http://thehybridspices.blogspot.in"><i class="fa fa-pencil"></i>&nbsp;Blog</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-								Resources
+								<i class="fa fa-file"></i>&nbsp;Resources
 								<b class="caret"></b>
 							</a>
 							<ul class="dropdown-menu">
@@ -49,7 +52,7 @@
 								<li><a href="#">External Links</a></li>
 							</ul>
 						</li>
-						<li><a href="#">Contact</a></li>
+						<li><a href="#"><i class="fa fa-phone"></i>&nbsp;Contact</a></li>
 					</ul>
 				</div>
 			</nav>
@@ -59,14 +62,17 @@
 			<div class="footer">
 				<div class = "container">
 					<hr />
-					<p class="text-center">This site is built and hosted with open source technology. <a href="#">Learn more here</a></p>
+					<p class="text-center">This site is built and hosted with open source technology. <a href="#">Learn more</a></p>
 					<p class="text-center">&copy; Amey Kamat, 2014 | All rights Reserved</p>
 				</div>
 			</div>
 		</div>
-        <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+		
+        <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <!-- Include all compiled plugins (below), or include individual files as needed -->
-        <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+        
+        <!-- Bootstrap js -->
+        <script src="content/lib/bootstrap/js/bootstrap.min.js"></script>
+    
     </body>
 </html>
