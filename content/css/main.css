@@ -65,3 +65,7 @@ div.footer a:hover{
 div.footer a:active{
 	color: white;
 }
+
+div.social-media{
+	padding: 15px;
+}
