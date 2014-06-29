@@ -3,6 +3,10 @@ h2{
 	font-family: Times New Roman;
 }
 
+h4{
+	font-weight: bold;
+}
+
 p{
 	font-size: 17px;
 	color: #585858;
@@ -11,10 +15,6 @@ p{
 ul.body-list{
 	font-size: 17px;
 	color: #585858;
-}
-
-.viewport{
-	height: 100vh;
 }
 
 a:link{

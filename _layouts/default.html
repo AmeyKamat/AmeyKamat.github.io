@@ -24,7 +24,7 @@
         
     </head>
     <body>
-		<div class = "viewport">
+		<div>
 			<nav class="navbar navbar-default" role="navigation">
 				<div class="container">
 					<div class="navbar-header">
@@ -44,7 +44,7 @@
 									<b class="caret"></b>
 								</a>
 								<ul class="dropdown-menu">
-									<li><a href="/my_activities/projects">Projects</a></li>
+									<li><a href="/my_activities/projects_and_experience">Projects & Experience</a></li>
 									<li><a href="/my_activities/academics">Academics</a></li>
 									<li><a href="/my_activities/achievements">Achievements</a></li>
 									<li><a href="/my_activities/initiatives">Initiatives</a></li>
@@ -58,7 +58,7 @@
 								</a>
 								<ul class="dropdown-menu">
 									<li><a href="/resources/resume">Resume</a></li>
-									<li><a href="/resoources/external_links">External Links</a></li>
+									<li><a href="/resources/external_links">External Links</a></li>
 								</ul>
 							</li>
 							<li><a href="/contact"><i class="fa fa-phone"></i>&nbsp;Contact</a></li>
@@ -68,8 +68,21 @@
 			</nav>
     
 			{{ content }}
+			
+			<br />
+			<br />
 	
-			<div class="footer">
+			
+		
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        
+        <!-- Bootstrap js -->
+        <script src="/content/lib/bootstrap/js/bootstrap.min.js"></script>
+
+
+    </body>
+    <div class="footer">
 				<div class = "container">
 					<hr />
 					<p class="text-center">This site is built and hosted with open source technology. <a href="/website_tools">Learn more</a></p>
@@ -85,13 +98,4 @@
 				</div>
 			</div>
 		</div>
-		
-        <!-- jQuery -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        
-        <!-- Bootstrap js -->
-        <script src="/content/lib/bootstrap/js/bootstrap.min.js"></script>
-
-
-    </body>
 </html>
