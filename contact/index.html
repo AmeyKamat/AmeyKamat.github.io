@@ -2,7 +2,6 @@
 layout: default
 title: Contact
 ---
-
 <div class="container">
 	<div class="row">
 		<h2>
@@ -64,6 +63,17 @@ title: Contact
 						</div>
 					</div>
 				</div>
+				<label for="txtInput"><p>Please Enter the Code Shown in the Box Below*:</p></label>
+				<input type="text" id="txtCaptcha" style="background-image:url(/content/img/captcha.jpg); text-align:center; border:none; font-weight:bold; font-family:Modern" disabled />
+				<a href="#" id="btnrefresh" value="Refresh" onclick="DrawCaptcha();"><i class="fa fa-refresh"></i></a>
+				<br /><br />
+				<div class="row">
+					<div class="col-md-6">
+						<input type="text" id="txtInput" class="form-control" placeholder="Enter Captcha Here"/> 
+					</div>
+					<a href="#" id="btnvalidate" value="Validate" onclick="Validate();"><i class="fa fa-arrow-circle-right fa-2x" style="vertical-align:middle"></i></a>
+				</div>
+				<p class="help-block">Submiting the code will enable submit button.</p>
 				<input type="hidden" name="draftResponse" value="[,,&quot;-1873813588482331371&quot;]">
 				<input type="hidden" name="pageHistory" value="0">
 
@@ -75,7 +85,7 @@ title: Contact
 						<tbody>
 							<tr>
 								<td id="navigation-buttons" dir="ltr">
-									<button class="btn btn-primary" type="submit" name="submit" value="Submit" id="ss-submit">Submit</button>
+									<button class="btn btn-primary" type="submit" name="submit" value="Submit" id="ss-submit" disabled>Submit</button>
 								</td>
 							</tr>
 						</tbody>
@@ -86,3 +96,5 @@ title: Contact
 
 	</div>
 </div>
+<script src="/content/js/captcha.js"></script>
+<script>DrawCaptcha();</script>
