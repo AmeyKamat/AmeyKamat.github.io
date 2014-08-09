@@ -12,10 +12,10 @@ For any queries, you can drop a mail at ask5332@gmail.com
 Open Source Support
 ====================
 
-This is supports open source technology. Site has been built by following tools:
+This site supports open source technology. Site is built using following tools:
 
 * [Bootstrap](http://getbootstrap.com)
-* [Bootswatch Template](http://bootswatch.com)
+* [Bootswatch Templates](http://bootswatch.com)
 * [Font Awesome](http://fortawesome.github.io/Font-Awesome)
 * [Jekyll](http://jekyllrb.com)
 
