@@ -16,8 +16,8 @@
 body{
 	background-image: url('/content/img/background.jpg');
 	background-repeat: no-repeat;
-	background-attachment: fixed;
 	background-size: cover;
+	background-attachment: fixed;
 	color: #e5e5e5;
 	
 }
