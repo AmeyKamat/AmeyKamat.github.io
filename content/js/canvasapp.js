@@ -110,7 +110,7 @@ function CanvasState(canvas) {
 				mySel = i;
 			}
 		}
-		myState.shapes.splice(i,1);
+		myState.shapes.splice(mySel,1);
 		myState.valid = false;
 	}, true);
 	  
