@@ -1,3 +1,7 @@
+var hammerdrag = []
+hammerdrag[0] = new Hammer(document.getElementsByTagName('span')[0]);
+hammerdrag[1] = new Hammer(document.getElementsByTagName('span')[1]);
+
 function Shape(t, x, y, w, h, fill) {
 	this.t = t || 0;
 	this.x = x || 50;
@@ -61,70 +65,94 @@ function CanvasState(canvas) {
 	  
 	canvas.addEventListener('selectstart', function(e) { e.preventDefault(); return false; }, false);
 
-	hammertime.on('pan', function(ev) {
+	hammertime.on('panstart', function(ev) {
 		var mouse = myState.getMouse(ev.changedPointers[0]);
-		  
-			myState.selection.x = mouse.x - myState.dragoffx;
-			myState.selection.y = mouse.y - myState.dragoffy;   
-			myState.valid = false; // Something's dragging so we must redraw
-	});
-	
-	canvas.addEventListener('mousedown', function(e) {
-		var mouse = myState.getMouse(e);
 		var mx = mouse.x;
 		var my = mouse.y;
+		
 		var shapes = myState.shapes;
+		var mySel
 		var l = shapes.length;
 		for (var i = l-1; i >= 0; i--) {
 			if (shapes[i].contains(mx, my)) {
-				var mySel = shapes[i];
+				mySel = shapes[i];
+			}
+		}
+		myState.selection = mySel;
+		if(myState.selection){
+			myState.dragging = true;
+		}
+		
+	});
+	hammertime.on('panend pancancel', function(ev) {
+		myState.dragging = false;
+	});
+	hammertime.on('panmove', function(ev) {
+		if(myState.dragging){
+			var mouse = myState.getMouse(ev.changedPointers[0]);
+			var mx = mouse.x;
+			var my = mouse.y;
 			
-				myState.dragoffx = mx - mySel.x;
-				myState.dragoffy = my - mySel.y;
-				myState.dragging = true;
-				myState.selection = mySel;
-				myState.valid = false;
-				return;
-		  }
+			
+				myState.selection.x = mouse.x - myState.dragoffx;
+				myState.selection.y = mouse.y - myState.dragoffy;   
+				myState.valid = false; // Something's dragging so we must redraw
+		}
+	});
+	
+	hammertime.on('tap', function(ev) {
+		var mouse = myState.getMouse(ev.changedPointers[0]);
+		if(ev.tapCount == 2){
+			
+			var mx = mouse.x;
+			var my = mouse.y;
+			var shapes = myState.shapes;
+			var mySel
+			var l = shapes.length;
+			for (var i = l-1; i >= 0; i--) {
+				if (shapes[i].contains(mx, my)) {
+					mySel = i;
+				}
+			}
+			myState.shapes.splice(mySel,1);
+			myState.valid = false;
+		}
+			
+		console.log(ev);
+	});
+	
+	hammertime.on('press tap', function(ev) {
+		var mouse = myState.getMouse(ev.changedPointers[0]);
+		
+		if((ev.type == "tap" && ev.tapCount == 1) || ev.type =="press"){  
+		
+			var mx = mouse.x;
+			var my = mouse.y;
+			var shapes = myState.shapes;
+			var l = shapes.length;
+			for (var i = l-1; i >= 0; i--) {
+				if (shapes[i].contains(mx, my)) {
+					var mySel = shapes[i];
+				
+					myState.dragoffx = mx - mySel.x;
+					myState.dragoffy = my - mySel.y;
+					myState.dragging = true;
+					myState.selection = mySel;
+					myState.valid = false;
+					return;
+				}
+			}
 		}
 		
 		if (myState.selection) {
 			myState.selection = null;
 			myState.valid = false; // Need to clear the old selection border
 		}
-	}, true);
-	  
-	canvas.addEventListener('touchmove', function(e) {
-		//if (myState.dragging){
-			//console.log(
-			var mouse = myState.getMouse(e.targetTouches[0]);
-		  
-			myState.selection.x = mouse.x - myState.dragoffx;
-			myState.selection.y = mouse.y - myState.dragoffy;   
-			myState.valid = false; // Something's dragging so we must redraw
-		//}
-		e.preventDefault();
-	}, false);
-	  
-	canvas.addEventListener('touchend', function(e) {
-		myState.dragging = false;
+	});
+	canvas.addEventListener('mousedown', function(e) {
+		
 	}, true);
 	
-	canvas.addEventListener('dblclick', function(e) {
-		var mouse = myState.getMouse(e);
-		var mx = mouse.x;
-		var my = mouse.y;
-		var shapes = myState.shapes;
-		var mySel
-		var l = shapes.length;
-		for (var i = l-1; i >= 0; i--) {
-			if (shapes[i].contains(mx, my)) {
-				mySel = i;
-			}
-		}
-		myState.shapes.splice(mySel,1);
-		myState.valid = false;
-	}, true);
 	  
 	this.selectionColor = '#CC0000';
 	this.selectionWidth = 2;  
@@ -213,21 +241,28 @@ function init() {
 
 /* ************************************************************************************* */
 
+var data = "";
+
+hammerdrag[0].on('pan', function(ev) { dragR(ev);});
+hammerdrag[1].on('pan', function(ev) { dragC(ev);});
+hammerdrag[0].on('panend', function(ev) { drop(ev);});
+hammerdrag[1].on('panend', function(ev) { drop(ev);});
+
 function allowDrop(ev) {
     ev.preventDefault();
 }
 
 function dragR(ev) {
-    ev.dataTransfer.setData("text", "rectangle");
+    data = "rectangle"
 }
 
 function dragC(ev) {
-    ev.dataTransfer.setData("text", "circle");
+    data = "circle"
 }
 
 function drop(ev) {
     ev.preventDefault();
-    var data = ev.dataTransfer.getData("text");
+    
     if(data == "rectangle")
 		s.addShape(new Shape(0, 40,40,50,50, "black"));
     else if(data == "circle")
