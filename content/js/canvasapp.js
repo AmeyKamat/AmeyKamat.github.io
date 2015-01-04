@@ -59,7 +59,7 @@ function CanvasState(canvas) {
 	  
 	canvas.addEventListener('selectstart', function(e) { e.preventDefault(); return false; }, false);
 
-	canvas.addEventListener('mousedown', function(e) {
+	canvas.addEventListener('touchbegin', function(e) {
 		var mouse = myState.getMouse(e);
 		var mx = mouse.x;
 		var my = mouse.y;
@@ -84,7 +84,7 @@ function CanvasState(canvas) {
 		}
 	}, true);
 	  
-	canvas.addEventListener('mousemove', function(e) {
+	canvas.addEventListener('touchmove', function(e) {
 		if (myState.dragging){
 			var mouse = myState.getMouse(e);
 		  
@@ -94,7 +94,7 @@ function CanvasState(canvas) {
 		}
 	}, true);
 	  
-	canvas.addEventListener('mouseup', function(e) {
+	canvas.addEventListener('touchend', function(e) {
 		myState.dragging = false;
 	}, true);
 	
