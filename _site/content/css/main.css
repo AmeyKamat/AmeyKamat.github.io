@@ -13,6 +13,8 @@
     src: url(/content/fonts/cheap_sign.ttf);
 }
 
+
+
 body{
 	background-image: url('/content/img/background.jpg');
 	background-repeat: no-repeat;
@@ -30,31 +32,39 @@ p{
 	font-size: 17px;
 }
 
+.active{
+	font-size: 15px;
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+	background-color: rgba(0,0,0,0.2);
+}
+
 button.submit:enabled{
-	padding:20px 30px;
-	background-color:rgba(0, 0, 0, 0.0);
+	padding:10px 20px;
+	background-color:rgba(255, 255, 255, 0.2);
 	color: white;
 	font-size:16px;
 	border-radius:5px;
-	border: solid white 2px;
+	border: solid white 1px;
 }
 
 button.submit:disabled{
-	padding:20px 30px;
-	background-color:rgba(0, 0, 0, 0.0);
+	padding:10px 20px;
+	background-color:rgba(255, 255, 255, 0.0);
 	color: #C8C8C8;
 	font-size:16px;
 	border-radius:5px;
-	border: solid #C8C8C8 2px;
+	border: solid #C8C8C8 1px;
 }
 
 button.submit:enabled:hover{
-	padding:20px 30px;
-	background-color:rgba(0, 0, 200, 0.1);
+	padding:10px 20px;
+	background-color:rgba(0, 0, 0, 0.2);
 	color: white;
 	font-size:16px;
 	border-radius:5px;
-	border: solid white 2px;
+	border: solid white 1px;
 }
 
 ul.body-list{
@@ -70,32 +80,65 @@ div.full-10-vp{
 	height: 15vh;
 }
 
-div.menu div p a:link{
-	font-size: 25px;
+.menu ul li{
+	font-size: 15px;
 	color: #e5e5e5;
 	font-weight: 500;
 	text-decoration: none;
 }
 
-div.menu div p a:visited{
-	font-size: 25px;
+.menu ul li:link{
+	font-size: 15px;
 	color: #e5e5e5;
 	font-weight: 500;
 	text-decoration: none;
 }
 
-div.menu div p a:hover{
-	font-size: 25px;
+.menu ul li:visited{
+	font-size: 15px;
+	color: #e5e5e5;
+	font-weight: 500;
+	text-decoration: none;
+}
+
+.menu ul li:hover{
+	font-size: 15px;
 	color: white;
 	font-weight: bold;
 	text-decoration: none;
+	background-color: rgba(0,0,0,0.2);
 }
 
-div.menu div p a:active{
-	font-size: 25px;
+.scrolled-menu ul li:active{
+	font-size: 15px;
 	color: #e5e5e5;
 	font-weight: 500;
 	text-decoration: none;
+	background-color: rgba(255,255,255,0.5);
+}
+
+.scrolled-menu ul li:visited{
+	font-size: 15px;
+	color: #e5e5e5;
+	font-weight: 500;
+	text-decoration: none;
+	background-color: rgba(255,255,255,0.5);
+}
+
+.scrolled-menu ul li:hover{
+	font-size: 15px;
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+	background-color: rgba(0,0,0,0.2);
+}
+
+.scrolled-menu ul li:active{
+	font-size: 15px;
+	color: #e5e5e5;
+	font-weight: 500;
+	text-decoration: none;
+	background-color: rgba(255,255,255,0.5);
 }
 
 a:link{

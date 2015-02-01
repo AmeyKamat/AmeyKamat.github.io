@@ -24,29 +24,35 @@
         
     </head>
     <body style="padding:0px 15px">
-		<div class="row full-90-vp">
-			<div class="col-md-3 menu" style="padding:0px 30px">
-				<div style="position:fixed">
-					<h1 class="text-left" style="font-size:45px;"><strong>Portfolio</strong></h1>
-					<p style="position:relative; padding-top: 35vh;"><a href="/">Home.</a></p>
-					<p><a href="/content/downloads/kamat_amey.pdf">Résumé.</a></p>
-					<p><a href="/portfolio">My Portfolio.</a></p>
-					<!--<p><a href="#">Achievements.</a></p>-->
-					<p><a href="/contact">Contact.</a></p>
-					<div class="row social-media text-left">
-						<a href="http://www.facebook.com/ameyskamat"><img src="/content/si/facebook.png" alt="Facebook" /></a> 
-						<a href="http://twitter.com/kamat_amey"><img src="/content/si/twitter.png" alt="Twitter" /></a> 
-						<a href="http://www.linkedin.com/in/ameykamat"><img src="/content/si/linkedin.png" alt="LinkedIn" /></a> 
-						<a href="https://plus.google.com/+ameykamat"><img src="/content/si/google-plus.png" alt="Google+" /></a> 
-						<a href="https://github.com/AmeyKamat"><img src="/content/si/github.png" alt="GitHub" /></a>
-					</div>
-					<br>
-					<p style="font-size:20px;"><i class="fa fa-phone"></i> +91 9158411024</p>
-					<p style="font-size:20px;"><i class="fa fa-envelope"></i> ask5332@gmail.com</p>
+		<nav class="navbar navbar-default navbar-fixed-top" style="background-color: rgba(255,255,255,0.3);transition-property: backgroud-color; transition-duration:2s">
+			<div class="">
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<span class="navbar-brand" style="font-size:25px;"><strong><span style="font-size:15px;">AmeyKamat.in/</span>Portfolio</strong></span>
 				</div>
-			</div>
-			<div class="col-md-9" >
-				<div style="padding:50px 0px">
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse menu" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right" style="margin-right:10px">
+						<li><a href="/">Home</a></li>
+						<li><a href="/content/downloads/kamat_amey.pdf">Résumé</a></li>
+						<li><a href="/portfolio"class="active">My Portfolio</a></li>
+						<li><a href="/contact" >Contact</a></li>
+						
+					</ul>
+				</div><!-- /.navbar-collapse -->
+			</div><!-- /.container-fluid -->
+		</nav>
+		<div class="row full-90-vp">
+			<div class="container">
+				<div class="col-md-12" >
+					<div style="padding:50px 0px">
 	<div class="col-md-12" style="">
 		<div class="row">
 			<div class="col-md-12">
@@ -156,6 +162,11 @@
 	</div>
 </div>
 
+				</div>
+			</div>
+			<div class="container">
+				<hr style="border: 0;height: 0;border-top: 1px solid rgba(0, 0, 0, 0.1);border-bottom: 1px solid rgba(255, 255, 255, 0.6);">
+				<p class="text-center">(c) Amey Kamat, 2015</p>
 			</div>
 		</div>
 		
@@ -164,12 +175,48 @@
         
         <!-- Bootstrap js -->
         <script src="/content/lib/bootstrap/js/bootstrap.min.js"></script>
+        
+        <script>
+			function getScrollXY() {
+				  var scrOfX = 0, scrOfY = 0;
+				  if( typeof( window.pageYOffset ) == 'number' ) {
+						//Netscape compliant
+						scrOfY = window.pageYOffset;
+						scrOfX = window.pageXOffset;
+				  } else if( 
+						document.body && ( document.body.scrollLeft || document.body.scrollTop ) ) {
+						//DOM compliant
+						scrOfY = document.body.scrollTop;
+						scrOfX = document.body.scrollLeft;
+				  } else if( 
+						document.documentElement && ( document.documentElement.scrollLeft || document.documentElement.scrollTop ) ) {
+						//IE6 standards compliant mode
+						scrOfY = document.documentElement.scrollTop;
+						scrOfX = document.documentElement.scrollLeft;
+				  }
+				  return [ scrOfX, scrOfY ];
+			}
+			
+			function colorChange(){
+					var scroll = getScrollXY();
+					if(scroll[1] > 10){
+						var menu = document.getElementsByClassName("navbar-fixed-top")[0];
+						menu.style.backgroundColor = "rgba(0,0,0,0.5)"
+					}
+					else if(scroll[1] <= 10){
+						var menu = document.getElementsByClassName("navbar-fixed-top")[0];
+						menu.style.backgroundColor = "rgba(255,255,255,0.2)";
+					}
+			}
+			setInterval(function(){document.getElementsByTagName("html")[0].addEventListener("scroll", colorChange());},10);
+        </script>
 	</body>	
 </html>
 
 	
         
-
+<!--
 
     
 					
+-->

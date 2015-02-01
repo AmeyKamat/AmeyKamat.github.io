@@ -187,8 +187,8 @@ function CanvasState(canvas) {
 			var mx = mouse.x;
 			var my = mouse.y;
 			myState.selection.resize(activeHandle, mouse.x - this.currentRezizePosX, mouse.y - this.currentRezizePosY);
-			this.currentRezizePosX = mouse.y;
-			this.currentRezizePosY = mouse.x;
+			this.currentRezizePosX = mouse.x;
+			this.currentRezizePosY = mouse.y;
 			myState.valid = false;
 		}
 		else if(myState.dragging){

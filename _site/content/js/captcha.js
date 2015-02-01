@@ -18,6 +18,9 @@ function Validate(){
     if (str1 == str2){
 		document.getElementById('navigation-buttons').innerHTML = '<button class="submit" type="submit" name="submit" value="Submit" id="ss-submit">Submit</button>';
 	}
+	else{
+		document.getElementById('navigation-buttons').innerHTML = '<button class="submit" type="submit" name="submit" value="Submit" id="ss-submit" disabled>Submit</button>';
+	}
         
 }
 
@@ -26,3 +29,5 @@ function removeSpaces(string)
 {
     return string.split(' ').join('');
 }
+
+setInterval(function(){ Validate(); }, 10);
