@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>My Portfolio |  Amey Kamat</title>
+        <title>My Contributions |  Amey Kamat</title>
 
         <!-- Bootstrap css -->
         <link href="/content/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -16,11 +16,13 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]-->
         
+        <!-- Custom css file -->
+        <link href="/content/css/main.css" rel="stylesheet">
+        
         <!-- Font Awesome css -->
         <link rel="stylesheet" href="/content/lib/font-awesome/css/font-awesome.min.css">
         
-        <!-- Custom css file -->
-        <link href="/content/css/main.css" rel="stylesheet">
+        
         <script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -43,7 +45,7 @@
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
 					</button>
-					<span class="navbar-brand" style="font-size:25px;"><strong><span style="font-size:15px;">AmeyKamat.in/</span>Portfolio</strong></span>
+					<span class="navbar-brand" style="font-size:25px;"><strong><span style="font-size:15px;">AmeyKamat.in/</span>Contributions</strong></span>
 				</div>
 
 				<!-- Collect the nav links, forms, and other content for toggling -->
@@ -51,7 +53,7 @@
 					<ul class="nav navbar-nav navbar-right" style="margin-right:10px">
 						<li><a href="/">Home</a></li>
 						<li><a href="/content/downloads/kamat_amey.pdf">Résumé</a></li>
-						<li><a href="/portfolio"class="active">My Portfolio</a></li>
+						<li><a href="/portfolio">My Contributions</a></li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
 								Activities <span class="caret"></span>
@@ -66,30 +68,35 @@
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
 								Social <span class="caret"></span>
 							</a>
-							<ul class="dropdown-menu" role="menu">
+							<ul class="dropdown-menu text-right" role="menu">
 								<li>
 									<a href="http://www.facebook.com/ameyskamat">
-										<img src="/content/si/facebook.png" style="width:auto; height:13px;" alt="Facebook" />&nbsp;&nbsp;ameyskamat
+										<i class="fa fa-facebook"></i>&nbsp;&nbsp;ameyskamat
 									</a> 
 								</li>
 								<li>
 									<a href="http://twitter.com/kamat_amey">
-										<img src="/content/si/twitter.png" style="width:auto; height:13px;" alt="Twitter" />&nbsp;&nbsp;@kamat_amey
+										<i class="fa fa-twitter"></i>&nbsp;&nbsp;@kamat_amey
 									</a> 
 								</li>
 								<li>
 									<a href="http://www.linkedin.com/in/ameykamat">
-										<img src="/content/si/linkedin.png" style="width:auto; height:13px;" alt="LinkedIn" />&nbsp;&nbsp;ameykamat
+										<i class="fa fa-linkedin"></i>&nbsp;&nbsp;ameykamat
 									</a> 
 								</li>
 								<li>
 									<a href="https://plus.google.com/+ameykamat">
-										<img src="/content/si/google-plus.png" style="width:auto; height:13px;" alt="Google+" />&nbsp;&nbsp;+ameykamat
+										<i class="fa fa-google-plus"></i>&nbsp;&nbsp;+ameykamat
 									</a> 
 								</li>
 								<li>
 									<a href="https://github.com/AmeyKamat">
-										<img src="/content/si/github.png" style="width:auto; height:13px;" alt="GitHub" />&nbsp;&nbsp;AmeyKamat
+										<i class="fa fa-github"></i>&nbsp;&nbsp;AmeyKamat
+									</a>
+								</li>
+								<li>
+									<a href="https://bitbucket.com/AmeyKamat">
+										<i class="fa fa-bitbucket"></i>&nbsp;&nbsp;AmeyKamat
 									</a>
 								</li>
 							</ul>
@@ -105,33 +112,39 @@
 				<div class="col-md-12" >
 					<div style="padding:50px 0px">
 	<div class="col-md-12" style="">
-		<!--<div class="row">
+		<div class="row">
 			<div class="col-md-12">
-				<h2>Rural ICT</h2>
+				<h2>Rural IVRS</h2>
 				<div class="row" style="margin:20px 0px 0px">
 					<div class="col-md-4 text-center">
-						<img src="/content/img/AmeyKamatdotin.png" class="col-md-12" style="padding:20px 0px; margin:0px 20px 0px 0px;border:1px white solid; border-radius:10px 10px 10px 10px; float:left;" >
+						<img src="/content/img/ruralict.png" class="col-md-12" style="padding:20px 0px; margin:0px 20px 0px 0px; background-color:black; border:1px white solid; border-radius:10px 10px 10px 10px; float:left;" >
 					</div>
 					<div class="col-md-8 text-left">
-						<p><strong>For: </strong>Myself!</p>
-						<p><strong>Duration: </strong>June 2014 – Present</p>
+						<p><strong>For: </strong>Indian Institute of Technology Bombay</p>
+						<p><strong>Duration: </strong>May 2015 – Present</p>
 						<p>
 							<strong>Description: </strong>
-							AmeyKamat.in is my personal portfolio website showcasing my projects and experience. 
+							Rural IVRS is an Interactive Voice Response System(IVRS) targeted 
+							to the low end consumers and producers. IVRS generates a voice response 
+							that is used to generate bill. Project is guided by 
+							Prof. Ganesh Ramakrishnan of CSE Department, IITB. 
+							The project follows MVC architecture very closely.
 						</p>
 						<p>
-							This website is hosted on github and is designed using bootstrap.
+							The project is being developed in Spring Framework, Java, Kookoo Telephony Engine, MySQL, 
+							Thymeleaf, Bootstrap and AngularJS.
 						</p>
 						<p>
 							<strong>My Role: </strong>
-							Designed complete structure of the website.
+							Contributed in design and development of service layer. Designed a daemon module to download
+							and store files on IITB server regularly.
 						</p>
 					</div>
 				</div>
 			</div>
 		</div>
 		
-		<hr>-->
+		<hr>
 		
 		<div class="row">
 			<div class="col-md-12">
