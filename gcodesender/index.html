@@ -1,4 +1,4 @@
-<html onbeforeunload="return closePorts()">
+<html>
 	<head>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
@@ -39,6 +39,7 @@
 					<form id="form">
 						<textarea id="msg"></textarea><br><br>
 						<input type="submit" value="Carve!" id="carve" disabled/>
+						<button type="button" value="stop" id="stop" onclick="sendCommand(this)" disabled>Stop (Not Tested)</button>
 					</form>
 				</div>
 				<div class="col-md-6">
@@ -48,7 +49,7 @@
 						<button type="button" value="close" id="close" onclick="sendCommand(this)" disabled>Close Port</button>
 					</div>
 					<div class="row" style="text-align:center;padding-top:20px;">
-						Offset: <input type="text" id="offset" value="0" style="width:50px"/>
+						Offset: <input type="text" id="offset" value="1" style="width:50px"/>
 					</div>
 					<div class="row">
 						<div class="col-md-6" style="padding-top:50px; padding-bottom:50px;">
@@ -100,13 +101,7 @@
 			var baudRate = "9600";
 			var gcode = [];
 			var currentLine = 0;
-			var isPortOpen = false; 
-			
-			function closePorts(){ 
-				alert("Hi");
-				if(isOpenPort)				
-					sendMessage("close " + portName);
-			}
+			var isStop = false; 
 
 			/* Utility function to display current output to log */
 			function display(msg) {
@@ -159,6 +154,10 @@
 				}
 				if(dir == "open"){
 					msg = "list";
+				}
+				if(dir == "stop"){
+					isStop = true;
+					msg = "close " + portName;
 				}
 				sendMessage(msg);
 			}
@@ -234,7 +233,12 @@
 					display(response.Desc);
 					$("#close").attr('disabled',true);
 					$("#carve").attr('disabled',true);
+					$("#stop").attr('disabled',true);
 					$("#open").attr('disabled',false);
+					if(isStop){
+						sendMessage("list");
+						isStop = false;
+					}
 					totInstr = 0;
 					
 				}
@@ -264,6 +268,7 @@
 					display("Connection to server disconnected.");	
 					$("#close").attr('disabled',true);
 					$("#carve").attr('disabled',true);
+					$("#stop").attr('disabled',true);
 					$("#open").attr('disabled',false);
 				};
 				
@@ -322,6 +327,7 @@
 							display("Setting Active Port: " + portName);
 							currentLine++;
 							$("#carve").attr('disabled', false);
+							$("#stop").attr('disabled', false);
 					 		$("#close").attr('disabled', false);
 							$("#open").attr('disabled',true);
 							isPortOpen = true;
