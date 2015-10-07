@@ -102,6 +102,7 @@
 			var gcode = [];
 			var currentLine = 0;
 			var isStop = false; 
+			var isReset = true;
 
 			/* Utility function to display current output to log */
 			function display(msg) {
@@ -153,6 +154,7 @@
 					msg = "close " + portName;
 				}
 				if(dir == "open"){
+					isReset = true;
 					msg = "list";
 				}
 				if(dir == "stop"){
@@ -332,7 +334,10 @@
 							$("#open").attr('disabled',true);
 							isPortOpen = true;
 							/* Set relative coordinates in case server is reinitialised */
-							sendMessage("send " + portName + " " + "G91");
+							if(isReset){
+								isReset = false;
+								sendMessage("send " + portName + " " + "G91");
+							}
 						}
 						else if(message == "ok\r\n"){	/* End of response detected */
 							/* Fire custom get event */
