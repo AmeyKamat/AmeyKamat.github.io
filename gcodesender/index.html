@@ -334,10 +334,8 @@
 							$("#open").attr('disabled',true);
 							isPortOpen = true;
 							/* Set relative coordinates in case server is reinitialised */
-							if(isReset){
-								isReset = false;
-								sendMessage("send " + portName + " " + "G91");
-							}
+							sendMessage("send " + portName + " " + "G91");
+							
 						}
 						else if(message == "ok\r\n"){	/* End of response detected */
 							/* Fire custom get event */
