@@ -30,69 +30,85 @@
 		</style>
 	</head>
 	<body>
+		
+		<!-- Progress Log -->
 		<div id="log">
 			G Code Sender v2.0<br>
 			By Amey Kamat and Tanay Gahlot</br> 
 		</div>
+		<!-- End Progress Log -->
+		
+		<!-- Control Panel -->
 		<div id="control-panel" style="margin:0px; background-color:lightgray">
-				<div id="gcode-sender" class="col-md-6">
-					<form id="form">
-						<textarea id="msg"></textarea><br><br>
-						<input type="submit" value="Carve!" id="carve" disabled/>
-						<button type="button" value="stop" id="stop" onclick="sendCommand(this)" disabled>Stop (Not Tested)</button>
-					</form>
+			
+			<!-- G-Code Sender Interface -->
+			<div id="gcode-sender" class="col-md-6">
+				<form id="form">
+					<!-- Textarea to enter G-Code -->
+					<textarea id="msg" placeholder="Enter G-Code here."></textarea><br><br>
+					<!-- Carve Button -->
+					<input type="submit" value="Carve!" id="carve" disabled/>
+					<!-- Stop Carving Button -->
+					<button type="button" value="stop" id="stop" onclick="sendCommand(this)" disabled>Stop (Not Tested)</button>
+				</form>
+			</div>
+			<!-- End G-Code Sender Interface -->
+			
+			<!-- Tool Movement Controls -->
+			<div class="col-md-6">
+				
+				<!-- Open and Close Port and Zero Position Controls  -->
+				<div class="row" style="text-align:center; padding-top:10px;">
+					<button type="button" value="open" id="open" onclick="sendCommand(this)">Open Port</button>
+					<button type="button" value="zero" id="zero" onclick="sendCommand(this)">Zero Position</button>
+					<button type="button" value="close" id="close" onclick="sendCommand(this)" disabled>Close Port</button>
 				</div>
-				<div class="col-md-6">
-					<div class="row" style="text-align:center; padding-top:10px;">
-						<button type="button" value="open" id="open" onclick="sendCommand(this)">Open Port</button>
-						<button type="button" value="zero" id="zero" onclick="sendCommand(this)">Zero Position</button>
-						<button type="button" value="close" id="close" onclick="sendCommand(this)" disabled>Close Port</button>
-					</div>
-					<div class="row" style="text-align:center;padding-top:20px;">
-						Offset: <input type="text" id="offset" value="1" style="width:50px"/>
-					</div>
-					<div class="row">
-						<div class="col-md-6" style="padding-top:50px; padding-bottom:50px;">
-							<div class="row" style="text-align:center">
-								<button type="button" value="forward" id="zero" onclick="sendCommand(this)">&uarr;</button>
+				
+				<!-- Tool Movement Controls -->
+				<div class="row" style="text-align:center;padding-top:20px;">
+					Offset: <input type="text" id="offset" value="1" style="width:50px"/>
+				</div>
+				<div class="row">
+					<div class="col-md-6" style="padding-top:50px; padding-bottom:50px;">
+						<div class="row" style="text-align:center">
+							<button type="button" value="forward" id="zero" onclick="sendCommand(this)">&uarr;</button>
+						</div>
+						<div class="row">
+							<div id="controls" class="col-md-6" style="text-align:right">
+								<button type="button" value="left" id="zero" onclick="sendCommand(this)">&larr;</button>
 							</div>
-							<div class="row">
-								<div id="controls" class="col-md-6" style="text-align:right">
-									<button type="button" value="left" id="zero" onclick="sendCommand(this)">&larr;</button>
-								</div>
-								<div id="controls" class="col-md-6" style="text-align:left">
-									<button type="button" value="right" id="zero" onclick="sendCommand(this)">&rarr;</button>
-								</div>
-							</div>
-							<div class="row" style="text-align:center">
-								<button type="button" value="backword" id="zero" onclick="sendCommand(this)">&darr;</button>
+							<div id="controls" class="col-md-6" style="text-align:left">
+								<button type="button" value="right" id="zero" onclick="sendCommand(this)">&rarr;</button>
 							</div>
 						</div>
-						<div class="col-md-6" style="padding-top:50px; padding-bottom:50px;">
-							<div class="row" style="text-align:center">
-								<button type="button" value="up" id="zero" onclick="sendCommand(this)">&uarr;</button>
-							</div>
-							<div class="row" style="text-align:center; padding:10px">
-								Z-Axis
-							</div>
-							<div class="row" style="text-align:center">
-								<button type="button" value="down" id="zero" onclick="sendCommand(this)">&darr;</button>
-							</div>
+						<div class="row" style="text-align:center">
+							<button type="button" value="backword" id="zero" onclick="sendCommand(this)">&darr;</button>
 						</div>
 					</div>
-					<div id="progress" class="row" style="text-align:center;padding-top:20px;"></div>
+					<div class="col-md-6" style="padding-top:50px; padding-bottom:50px;">
+						<div class="row" style="text-align:center">
+							<button type="button" value="up" id="zero" onclick="sendCommand(this)">&uarr;</button>
+						</div>
+						<div class="row" style="text-align:center; padding:10px">
+							Z-Axis
+						</div>
+						<div class="row" style="text-align:center">
+							<button type="button" value="down" id="zero" onclick="sendCommand(this)">&darr;</button>
+						</div>
+					</div>
 				</div>
+				<div id="status" class="row" style="text-align:center;padding-top:20px;"></div>
+				<div id="progress" class="row" style="text-align:center;padding-top:20px;"></div>
+			</div>
 		</div>
 		
 	
 
 		<script>
-			/* Setting all global HTML elements */
-			var msg = $("#msg");
-			var log = $("#log");
-			var progress = $("#progress");
-			var totInstr;
-			var complInstr;
+			
+			/* Elements of Progress Bar */
+			var total;
+			var completed;
 
 			/* Setting all attributes governing the gcode sender */
 			var conn;
@@ -100,11 +116,11 @@
 			var portName = "";
 			var baudRate = "9600";
 			var gcode = [];
-			var currentLine = 0;
 			var isStop = false; 
 
-			/* Utility function to display current output to log */
-			function display(msg) {
+			/* Utility functions to print to console and display */
+			function writeLog(msg) {
+				var log = $("#log");
 				var d = log[0];
 				var doScroll = d.scrollTop == d.scrollHeight - d.clientHeight;
 				$("<div>"+ msg +"</div>").appendTo(log);
@@ -112,59 +128,165 @@
 					d.scrollTop = d.scrollHeight - d.clientHeight;
 				}
 			}
-
-			/* Sending message to CNC */
-			function sendMessage(msg){
+			
+			function writeConsole(value){
+				console.log(value)
+			}
+			
+			function writeStatus(msg){
+				var status = $("#status");
+				status.text(msg);
+			}
+			
+			/* Writes and Increments Progress */
+			function writeAndIncrProgressBar(){
+				var progress = $("#progress");
 				
-				print("Sending Messge : " + msg);
-				display("Sending Messge : " + msg);
-				conn.send(msg + "\n")
+				if(total > 0){
+					progress.text(Math.round(completed*100/total) + "% Completed")
+					completed++;
+				}
+			}
+			
+			function setButtonValue(carveDis, stopDis, openDis, closeDis){
+				$("#close").attr('disabled',closeDis);
+				$("#carve").attr('disabled',carveDis);
+				$("#stop").attr('disabled',stopDis);
+				$("#open").attr('disabled',openDis);
 			}
 
+			/* Send a message */
+			function sendMessage(msg){
+				writeConsole("Sending Messge : " + msg);
+				writeLog("Sending Messge : " + msg);
+				conn.send(msg + "\n")
+			}
+			
+			/* Split gcode string into array of gcodes */
+			function splitGcode(){
+				gcode = gcode.split("\n");
+			}
+			
+			/* Functions to send typical messages */
+			function G0(x, y, z){
+				sendMessage("send " + portName + " G0 X" + x + " Y" + y + " Z" + z);
+			}
+			
+			function G1(x, y, z){
+				sendMessage("send " + portName + " G1 X" + x + " Y" + y + " Z" + z);
+			}
+			
+			function G92(x, y, z){
+				sendMessage("send " + portName + " G92 X" + x + " Y" + y + " Z" + z);
+			}
+			
+			function G91(){
+				sendMessage("send " + portName + " G91");
+			}
+			
+			function close(port){
+				var p = port || portName;
+				sendMessage("close " + p);
+			}
+			
+			function list(){
+				sendMessage("list");
+			}
+			
+			function send(msg){
+				sendMessage("send " + portName + " " + msg);
+			}
+			
+			/* Abstractions for over basic g-codes  to do specific tasks */
+			function setZero(){
+				G92(0, 0, 0);
+			}
+			
+			function setRelativeCoord(){
+				G91();
+			}
+			
+			function moveUp(offset){
+				G0(0, 0, offset);
+			}
+			
+			function moveDown(offset){
+				G0(0, 0, -offset);
+			}
+			
+			function moveLeft(offset){
+				G0(-offset, 0 , 0);
+			}
+			
+			function moveRight(offset){
+				G0(offset, 0, 0);
+			}
+			
+			function moveForward(offset){
+				G0(0, offset, 0);
+			}
+			
+			function moveBackward(offset){
+				G0(0, -offset, 0);
+			}
+			
+			function openPort(){
+				list();
+			}
+			
+			function closePort(){
+				gcode = [];
+				close();
+			}
+			
+			function stop(){
+				isPort = true;
+				closePort();
+			}
+			
 			/* Function to handle test commands from UI */
 			function sendCommand(btn){
 				var dir = btn.value;
 				var offset = $("#offset").val();
-				totInstr = 0;
-				print(offset);
-				if((isNaN(offset) || offset=="") && (dir != "zero" || dir != "close")){
-					print("Enter valid offset");
-					print(offset);
-					display("Enter valid offset");
+				
+				total = 0;
+				
+				writeConsole(dir + " with offset " + offset);
+				
+				/* Validation for offset and ignore validation for non directional commands */
+				if((isNaN(offset) || offset=="") && (dir != "zero" && dir != "close" && dir != "stop" && dir != "open")){
+					writeConsole(offset + " is not a number.")
+					writeLog("Enter a valid offset");
 					return;
 				}
-				var msg;
-				if(dir == "zero")													//Zero Position
-					msg = "send " + portName + " G92 X0 Y0 Z0";
-				if(dir == "up")														//Move Left
-					msg = "send " + portName + " G0 X0 Y0 Z" + offset;
-				if(dir == "down")													//Move Down
-					msg = "send " + portName + " G0 X0 Y0 Z-" + offset;
-				if(dir == "left")													//Move Left
-					msg = "send " + portName + " G0 X-" + offset + " Y0 Z0";
-				if(dir == "right")													//Move Right
-					msg = "send " + portName + " G0 X" + offset + " Y0 Z0";
-				if(dir == "forward")												//Move Forward
-					msg = "send " + portName + " G0 X0 Y" + offset + " Z0";
-				if(dir == "backword")												//Move Backward
-					msg = "send " + portName + " G0 X0 Y-" + offset + " Z0";
-				if(dir == "close"){
-					gcode = [];
-					msg = "close " + portName;
-				}
-				if(dir == "open"){
-					msg = "list";
-				}
-				if(dir == "stop"){
-					isStop = true;
-					msg = "close " + portName;
-				}
-				sendMessage(msg);
+				
+				if(dir == "zero")													
+					setZero();
+				if(dir == "up")														
+					moveUp(offset);
+				if(dir == "down")													
+					moveDown(offset);
+				if(dir == "left")													
+					moveLeft(offset);
+				if(dir == "right")													
+					moveRight(offset);
+				if(dir == "forward")												
+					moveForward(offset);
+				if(dir == "backword")												
+					moveBackward(offset)
+				if(dir == "close")
+					closePort();
+				if(dir == "open")
+					openPort();
+				if(dir == "stop")
+					stop();
 			}
 
 			/* Event Handler to handle the submitted gcode */
 			$("#form").submit(function(e) {
 				e.preventDefault();
+				var msg = $("#msg");
+				
 				if (!conn) {
 					return false;
 				}
@@ -176,10 +298,12 @@
 				
 				/* Break down gcode and send first message to CNC */
 				splitGcode();
-				totInstr = gcode.length;
-				complInstr = 0;
-				print(gcode)
-				sendMessage("send " + portName + " " + gcode.shift());
+				
+				total = gcode.length;
+				completed = 0;
+				
+				send(gcode.shift());
+				
 				return false
 			});
 
@@ -198,6 +322,11 @@
 			/* Poll all the ports returned by list command */
 			function portSelector(data){
 				var listOfPorts = data["SerialPorts"];
+				if(listOfPorts.length == 0){
+					writeConsole("No serial ports detected.")
+					writeLog("No serial ports detected.")
+					return;
+				}
 				for(var i=0; i<listOfPorts.length; i++){
 					sendMessage("open " + listOfPorts[i].Name + " " + baudRate);
 				}
@@ -205,85 +334,77 @@
 
 			/* Show Error */
 			function showError(data){
-				print(data.Error);
-				display(data.Error);
+				writeLog(data.Error);
+				writeConsole(data.Error);
 			}
 
-			/* Split gcode string into array of gcodes */
-			function splitGcode(){
-				gcode = gcode.split("\n");
-			}
 
 			/* Handle Cmd response */
 			function showCmd(response){
 				if(response.Cmd == "OpenFail"){
 					/* Opening operation failed for a port */
-					print(response.Desc + " for port " + response.Port);
-					display(response.Desc + " for port " + response.Port);
-					sendMessage("close " + response.Port);
+					writeLog(response.Desc + " for port " + response.Port);
+					
+					//Need to be handled properly
+					close(response.Port);
 				}
 				else if(response.Cmd == "Open"){
 					/* Port has been opened */
-					print(response.Desc);
-					display(response.Desc);
+					writeLog(response.Desc);
 				}
 				else if(response.Cmd == "Close"){
-					/* Port has been opened */
-					print(response.Desc);
-					display(response.Desc);
-					$("#close").attr('disabled',true);
-					$("#carve").attr('disabled',true);
-					$("#stop").attr('disabled',true);
-					$("#open").attr('disabled',false);
+					/* Port has been closed */
+					writeLog(response.Desc);
+					setButtonValue(true, true, false, true);
+					
+					/* If stop mode activated */
 					if(isStop){
 						sendMessage("list");
 						isStop = false;
 					}
-					totInstr = 0;
+					
+					total = 0;
 					
 				}
-				else{
-					print(response);
-				}
+				/*else{
+					writeLog(response.Desc);
+					writeConsole(response);
+				}*/
 			}
 
-			function print(value){
-				console.log(value)
-			}
 
 			if(window["WebSocket"]){
 
 				/* Connect to standard web socket */
 				conn = new WebSocket("ws://localhost:8989/ws");
-				conn.onopen = function (event) {
-					print(event);
-					display("Connection with serial JSON server established successfully.");					
-				};
-				conn.onerror=function(event){
-					print(event);
-					display("Connection was refused. Ensure that serial JSON server is running.");					
-				};
-				conn.onclose=function(event){
-					print(event);
-					display("Connection to server disconnected.");	
-					$("#close").attr('disabled',true);
-					$("#carve").attr('disabled',true);
-					$("#stop").attr('disabled',true);
-					$("#open").attr('disabled',false);
+				
+				conn.onopen = function(event) {
+					writeConsole(event);
+					writeLog("Connection with serial JSON server established successfully.");					
 				};
 				
-				print(conn);
+				conn.onerror=function(event){
+					writeConsole(event);
+					writeLog("Connection was refused. Ensure that serial JSON server is running.");					
+				};
+				
+				conn.onclose=function(event){
+					writeConsole(event);
+					writeLog("Connection to server disconnected.");	
+					setButtonValue(true, true, false, true);
+				};
+				
+				writeConsole(conn);
 				
 				/* Event Listener for custom event get to for message out of chunks */
 				conn.addEventListener("get", function(e){
 					var message = messageBuffer;
-					print(message);
-					currentLine++;
+					writeConsole(message);
+					
 					/* If Gcode array is not null */
 					if(gcode[0]){
-					
 						/* Send next gcode */
-						sendMessage("send " + portName + " " + gcode.shift());
+						send(gcode.shift());
 					}
 				});
 				
@@ -293,16 +414,16 @@
 					var response = JSON.parse(e.data);
 					var key = Object.keys(response)[0];
 					
+					writeConsole(e.data);
+					
 					/* All possible responses frm CNC listed down */ 
 					if(key == "Version"){
-						print("Version: " + response.Version);
-						display("Version: " + response.Version);
+						writeLog("Version: " + response.Version);
 					}
 					else if(key == "Commands"){}
 					else if(key == "Hostname"){
-						print("HostName: " + response.Hostname);
-						display("HostName: " + response.Hostname);
-						sendMessage("list");
+						writeLog("HostName: " + response.Hostname);
+						list();
 					}
 					else if(key == "Error"){
 						showError(response);
@@ -322,31 +443,27 @@
 						/* If the server is initialised */
 						if(message == "\r\nGrbl 0.8c ['$' for help]\r\n"){
 							portName = response.P;
-							display(message);
-							print("Setting Active Port: " + portName);
-							display("Setting Active Port: " + portName);
-							currentLine++;
-							$("#carve").attr('disabled', false);
-							$("#stop").attr('disabled', false);
-					 		$("#close").attr('disabled', false);
-							$("#open").attr('disabled',true);
-							isPortOpen = true;
-							/* Set relative coordinates in case server is reinitialised */
-							sendMessage("send " + portName + " " + "G91");
+
+							writeConsole("Setting Active Port: " + portName);
+							writeLog("Setting Active Port: " + portName);
+
+							setButtonValue(false, false, true, false);
+							
+							/* Set relative coordinates */
+							setRelativeCoord();
 						}
 						else if(message == "ok\r\n"){	/* End of response detected */
+							
+							writeAndIncrProgressBar();
+							
 							/* Fire custom get event */
-							if(totInstr > 0){
-								progress.text(Math.round(complInstr*100/totInstr) + "% Completed")
-								complInstr++;
-							}
 							var event = new CustomEvent('get');
 							e.currentTarget.dispatchEvent(event);
 						}
 					}
 					else{
-						print(e.data);
-						display(e.data);
+						writeLog(e.data);
+						writeConsole(e.data);
 					}
 				};
 			}
