@@ -98,7 +98,7 @@
 			var conn;
 			var messageBuffer = "";
 			var portName = "";
-			var baudRate = "9600";
+			var baudRate = "115200";
 			var gcode = [];
 			var currentLine = 0;
 			var isStop = false; 
@@ -322,7 +322,7 @@
 						setMessageBuffer(message);
 						
 						/* If the server is initialised */
-						if(message == "\r\nGrbl 0.8c ['$' for help]\r\n"){
+						if(message.indexOf("Grbl") != -1){
 							portName = response.P;
 							display(message);
 							print("Setting Active Port: " + portName);
