@@ -1,14 +1,21 @@
-name: Amey Kamat
-description: Official Website of Amey Kamat
+title: Amey Kamat - Programmer and Developer
+description: Amey Kamat is a Computer Engineer and Programmer based in Ponda, Goa, India. He works in the field of Artificial Intelligence, Software Engineering and Web Development
 author: Amey Kamat
-author_email: ask5332@gmail.com
+author_email: amey@ameykamat.in
+author_linkedin: http://linkedin.ameykamat.in
+author_facebook: http://facebook.ameykamat.in
+author_twitter: http://twitter.ameykamat.in
+author_gplus: http://gplus.ameykamat.in
+author_goodreads: http://goodreads.ameykamat.in
+author_github: http://github.ameykamat.in
+author_bitbucket: http://bitbucket.ameykamat.in
 category_dir: /
 baseurl:
-url: http://ameykamat.github.io/
+url: http://www.ameykamat.in/
 markdown: kramdown
 excerpt_separator: <!--excerpt-->
 gems: [jekyll-paginate]
 permalink: /blog/:year/:month/:day/:title/
-paginate: 1
+paginate: 5
 paginate_path: "/blog/page:num/"
 exclude: [README.md]
