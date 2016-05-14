@@ -5,7 +5,7 @@ author_email: ask5332@gmail.com
 category_dir: /
 baseurl:
 url: http://ameykamat.github.io/
-markdown: rdiscount
+markdown: kramdown
 excerpt_separator: <!--excerpt-->
 gems: [jekyll-paginate]
 permalink: /blog/:year/:month/:day/:title/
