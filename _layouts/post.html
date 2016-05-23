@@ -2,14 +2,14 @@
 layout: blog
 ---
 
-<div style="margin-left:60px; margin-right:60px" class="text-justify">
+<div style="margin-left:100px; margin-right:100px" class="text-justify">
 	<div class="section-title">
 		<h2 class="text-center">{{ page.title }}</h2>
 	</div>
 	<br><br>
 	<div class="date text-center">{{ page.date | date: "%B %d, %Y" }}</div>
 	<div class="date text-center"><a href="{{ site.url }}">{{ site.author }}</a></div>
-
-<br><br>
-{{ content }}
+	<br><br>
+	<div class="row">{{ content }}</div>
+	
 </div>
