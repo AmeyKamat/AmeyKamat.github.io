@@ -7,7 +7,7 @@ h5,
 h6{font-weight:300;letter-spacing:0.4px;font-family:"Open Sans", Sans-serif;color:#232323;}
 h3{margin-top:50px}
 p{font-family:'Roboto', sans-serif;font-size:15px;font-weight:300;line-height:23px;letter-spacing:0.2px;color:#797979;}
-a:hover, a:focus, a:active, a.active{color:#fec503; text-decoration:none;}
+a:hover, a:focus, a:active, a.active{color:#fec503;text-decoration:none;}
 a, a:hover, a:focus, a:active, a.active{outline:0;}
 ::selection{text-shadow:none;background:#fed136;}
 @media (min-width:768px){section{padding:150px 0;}
@@ -40,7 +40,7 @@ header .intro-text .intro-lead-in{font-weight:600;font-size:22px;line-height:22p
 header .intro-text .intro-heading{text-transform:uppercase;font-weight:600;font-size:45px;line-height:50px;margin-bottom:25px;color:#fff}
 @media (min-width:768px){header .intro-text .intro-heading{text-transform:uppercase;font-weight:700;font-size:50px;line-height:75px;margin-bottom:50px;}
 }
-@media (min-width:768px){.article{margin-left:100px; margin-right:100px}
+@media (min-width:768px){.article{margin-left:100px;margin-right:100px}
 }
 .section-title h2{font-size:34px;text-transform:uppercase;}
 .section-title p{font-size:15px;font-weight:300;line-height:25px;margin:20px 100px 60px 100px;}
