@@ -1,0 +1,33 @@
+---
+layout: post
+title: ProjectX - Let Your Manufacturing Dreams Take Wing
+---
+
+<p>
+ProjectX is a concept system developed by me and my friend <a href="https://twitter.com/TanayGahlot" target="_blank">Tanay Gahlot</a> as a Term Project during B.Tech degree, that aims at automating rapid prototyping process from the perspective of a maker. The system takes in the CAD model from the user and instructs him/her on how to manufacture the model on a 3-Axis CNC. In this post I will talk all about ProjectX.
+</p>
+<!--excerpt-->
+
+<div class="row" style="padding:20px">
+<img class="img-responsive" style="width:100%" src="/assets/img/blog/2016-6-4-projectx.png">
+</div>
+
+<p>
+The project is inspired from the idea of <i>Personal Fabrication</i>, i.e. to equip a designer with tools which enables him/her to manufacture his design without consulting an expert. The system stands on a philosophy that any person with a design file and access to 3-Axis CNC machine should be able to prototype whatever he likes, irrespective of his knowledge and exposure to manufacturing. 
+</p><br>
+
+<p>
+Currently a maker in need of prototyping a design consults an expert engineer who understands the geometry of the CAD design and using CAM software packages generates instructions for the 3-Axis CNC to cut the surface of workpiece. ProjectX aims at reducing this plight of the makers by automating this entire toolpath generation process by mimicking the workflow of the expert using paradigms in the field of artificial intelligence.
+</p><br>
+
+<p>
+ProjectX generates both, the code to be executed on the workpiece using CNC, and instructions for the user to use this code, making the process of manufacturing as simple as 3 step process for the maker. First, user uploads the design file (in the form of STL file) and details about the tool bit into the ProjectX system. Second, the system generates the machine code and instructions for the maker. Finally, the maker follows the instructions to prototype his design.
+</p><br>
+
+<p>
+The working of ProjectX is simple. First the system generates sequence of orientations. These orientations are basically way of fixing a cuboidal workpiece on the work area based on which face of the cuboid will be on the top. For each orientation in the sequence of orientations, system generates sequence of operations, which resemble higher order operations like pocketing, drilling, roughing etc. Finally for each of these operations tool movement is determined and corresponding code is wriiten. The entire flow after generation of sequence of orientations is parallelized for quick response time. At the end of processing, the code is made available for download for the user, and the sequence of orientations is interpreted to generate instructions for the user.
+</p><br>
+
+<p>
+<a href="http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7474860&isnumber=7474713" target="_blank">A paper based on this work</a> has been accepted at IEEE International Conference of Industrial Technology (ICIT), 2016 at Taipei. Currently in beta stage, we have experimentally hosted the system on the web for easy accessibility and bug testing. The source code of the system is completely open source and <a href="https://github.com/TanayGahlot/ToolpathGenerator" target="_blank">is hosted on Github</a>. You can also visit the <a href="http://projectx.co.in" href="_blank">working prototype of ProjectX in beta phase</a>.
+</p>
