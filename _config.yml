@@ -10,7 +10,6 @@ author_goodreads: http://goodreads.ameykamat.in
 author_github: http://github.ameykamat.in
 author_bitbucket: http://bitbucket.ameykamat.in
 category_dir: /
-baseurl:
 url: http://www.ameykamat.in/
 markdown: kramdown
 excerpt_separator: <!--excerpt-->
