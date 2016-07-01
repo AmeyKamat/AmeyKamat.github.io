@@ -6,12 +6,14 @@ h4,
 h5,
 h6{font-weight:300;letter-spacing:0.4px;font-family:"Open Sans", Sans-serif;color:#232323;}
 h3{margin-top:50px}
-p{font-family:'Roboto', sans-serif;font-size:15px;font-weight:300;line-height:23px;letter-spacing:0.2px;color:#797979;}
+p{font-family:'Roboto', sans-serif;font-size:15px;font-weight:300;line-height:23px;letter-spacing:0.2px;color:#232323;}
 a:hover, a:focus, a:active, a.active{color:#fec503;text-decoration:none;}
 a, a:hover, a:focus, a:active, a.active{outline:0;}
 ::selection{text-shadow:none;background:#fed136;}
 @media (min-width:768px){section{padding:150px 0;}
 }
+.videoWrapper {position: relative;padding-bottom: 56.25%;padding-top: 25px;height: 0;margin:20px;}
+.videoWrapper iframe {position: absolute;top: 0;left: 0;width: 100%;height: 100%;}
 section{padding:70px 0;}
 .navbar-default{background-color:#222;border-color:transparent}
 .navbar-default .navbar-brand{color:#fff;font-family:"Montserrat",sans-serif;padding:0px;}
