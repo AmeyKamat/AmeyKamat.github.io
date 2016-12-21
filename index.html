@@ -8,17 +8,19 @@ title: Home
 
 		<!-- brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header page-scroll">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
 				<span class="sr-only">Toggle navigation</span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a class="navbar-brand page-scroll" href="#page-top" style="margin: 10px 0px 0px 0px;"><img src="/assets/img/logo.png" alt="Amey Kamat" height="30px" width="30px"></a>
+			<a class="navbar-brand page-scroll" href="#page-top">
+				<img src="/assets/img/logo.png" alt="Amey Kamat" class="navbar-logo">
+			</a>
 		</div>
 
 		<!-- collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		<div class="collapse navbar-collapse" id="navbar-collapse">
 			<ul class="nav navbar-nav navbar-right">
 				<li class="hidden">
 					<a href="#page-top"></a>
@@ -55,7 +57,7 @@ title: Home
 		<div class="slider-container">
 			<div class="intro-text">
 				<!-- logo -->
-				<img src="/assets/img/logo.png" alt="Amey Kamat" height="60px" width="64px" style="vertical-align:0%">
+				<img src="/assets/img/logo.png" alt="Amey Kamat" height="60px" class="frontpage-logo">
 				<!-- title -->
 				<h1 class="intro-heading">
 					{Amey Kamat}
@@ -65,28 +67,28 @@ title: Home
 					
 				<!-- social links -->
 				<!--<a rel="me" href="{{ site.author_facebook }}" data-toggle="tooltip" title="facebook" data-placement="bottom" target="_blank">
-					<img src="/assets/img/social/large/facebook.png" alt="Facebook" height="48px" width="48px" style="background: none"/>
+					<img src="/assets/img/social/large/facebook.png" alt="Facebook" class="frontpage-social-icon" />
 				</a>-->
 				<a rel="me" href="{{ site.author_twitter }}" data-toggle="tooltip" title="twitter" data-placement="bottom" target="_blank">
-					<img src="/assets/img/social/large/twitter.png" alt="Twitter" height="48px" width="48px" style="background: none; margin:5px"/>
+					<img src="/assets/img/social/large/twitter.png" alt="Twitter" class="frontpage-social-icon" />
 				</a>
 				<a rel="me" href="{{ site.author_linkedin }}" data-toggle="tooltip" title="linkedin" data-placement="bottom" target="_blank">
-					<img src="/assets/img/social/large/linkedin.png" alt="Linkedin" height="48px" width="48px" style="background: none; margin:5px"/>
+					<img src="/assets/img/social/large/linkedin.png" alt="Linkedin" class="frontpage-social-icon" />
 				</a>
 				<!--<a rel="me" href="{{ site.author_gplus }}" data-toggle="tooltip" title="google plus" data-placement="bottom" target="_blank">
-					<img src="/assets/img/social/large/google_plus.png" alt="Google Plus" style="height:48px; width:48px; background: none"/>
+					<img src="/assets/img/social/large/google_plus.png" alt="Google Plus" class="frontpage-social-icon" />
 				</a>-->
 				<a rel="me" href="{{ site.author_github }}" data-toggle="tooltip" title="github" data-placement="bottom" target="_blank">
-					<img src="/assets/img/social/large/github.png" alt="Github" height="48px" width="48px" style="background: none; margin:5px"/>
+					<img src="/assets/img/social/large/github.png" alt="Github" class="frontpage-social-icon" />
 				</a>
 				<a href="mailto:{{ site.author_email }}" data-toggle="tooltip" title="email" data-placement="bottom" target="_blank">
-					<img src="/assets/img/social/large/mail.png" alt="Mail" height="48px" width="48px" style="background: none; margin:5px"/>
+					<img src="/assets/img/social/large/mail.png" alt="Mail" class="frontpage-social-icon" />
 				</a>
 				<br>
 				
 				<!-- push down button -->
 				<div class="intro-heading">
-					<a href="#about" style="color:white">
+					<a href="#about" class="btn-push-down">
 						<i class="fa fa-angle-down">
 						</i>
 					</a>
@@ -101,7 +103,7 @@ title: Home
 	<div class="container">
 		<div class="row">					
 			<div class="col-md-3 text-center">
-				<img src="/assets/img/amey_kamat.jpg" alt="Amey Kamat" height="312px" width="250px" style="border-top-left-radius: 20px; border-bottom-right-radius: 20px">
+				<img src="/assets/img/amey_kamat.jpg" alt="Amey Kamat" class="portrait-photo">
 			</div>
 			<div class="col-md-9 text-justify">
 				<div class="section-title">
@@ -225,11 +227,11 @@ title: Home
 			<div class="col-md-4">
 				<div class="ot-portfolio-item">
 					<figure class="effect-bubba">
-						<img src="/assets/img/portfolio/cricsim.png" alt="cricksim" height="520" width="780" class="img-responsive" />
+						<img src="/assets/img/portfolio/cricsim.png" alt="Cricsim" class="img-responsive portfolio-image" />
 						<figcaption>
 							<h2>Cricsim</h2>
 							<p>Cricket Simulation</p>
-							<a href="#" data-toggle="modal" data-target="#Modal-1">View more</a>
+							<a href="#" data-toggle="modal" data-target="#cricSimModal">View more</a>
 						</figcaption>
 					</figure>
 				</div>
@@ -239,11 +241,11 @@ title: Home
 			<div class="col-md-4">
 				<div class="ot-portfolio-item">
 					<figure class="effect-bubba">
-						<img src="/assets/img/portfolio/projectX.jpg" alt="Project X" height="520" width="780" class="img-responsive" />
+						<img src="/assets/img/portfolio/projectX.jpg" alt="Project X" class="img-responsive portfolio-image" />
 						<figcaption>
 							<h2>ProjectX</h2>
 							<p>3D Toolpath Generator</p>
-							<a href="#" data-toggle="modal" data-target="#Modal-2">View more</a>
+							<a href="#" data-toggle="modal" data-target="#projectxModal">View more</a>
 						</figcaption>
 					</figure>
 				</div>
@@ -253,11 +255,11 @@ title: Home
 			<div class="col-md-4">
 				<div class="ot-portfolio-item">
 					<figure class="effect-bubba">
-						<img src="/assets/img/portfolio/ruralict.jpg" alt="ruralivrs" height="520" width="780" class="img-responsive" />
+						<img src="/assets/img/portfolio/ruralict.jpg" alt="RuralIVRS" class="img-responsive portfolio-image" />
 						<figcaption>
 							<h2>RuralIVRS</h2>
 							<p>IVRS System for Agriculture</p>
-							<a href="#" data-toggle="modal" data-target="#Modal-3">View more</a>
+							<a href="#" data-toggle="modal" data-target="#ruralivrsModal">View more</a>
 						</figcaption>
 					</figure>
 				</div>
@@ -269,11 +271,11 @@ title: Home
 			<div class="col-md-4">
 				<div class="ot-portfolio-item">
 					<figure class="effect-bubba">
-						<img src="/assets/img/portfolio/webDevelopment.png" alt="Web Development" height="520" width="780" class="img-responsive" />
+						<img src="/assets/img/portfolio/webDevelopment.png" alt="Web Development" class="img-responsive portfolio-image" />
 						<figcaption>
 							<h2>Web Development</h2>
 							<p>All Web Projects</p>
-							<a href="#" data-toggle="modal" data-target="#Modal-4">View more</a>
+							<a href="#" data-toggle="modal" data-target="#webDevelopmentModal">View more</a>
 						</figcaption>
 					</figure>
 				</div>
@@ -283,11 +285,11 @@ title: Home
 			<div class="col-md-4">
 				<div class="ot-portfolio-item">
 					<figure class="effect-bubba">
-						<img src="/assets/img/portfolio/letsSankalp.png" alt="LetsSankalp" height="520" width="780" class="img-responsive" />
+						<img src="/assets/img/portfolio/letsSankalp.png" alt="LetsSankalp" class="img-responsive portfolio-image" />
 						<figcaption>
 							<h2>LetsSankalp</h2>
 							<p>NGO - Investor Portal</p>
-							<a href="#" data-toggle="modal" data-target="#Modal-5">View more</a>
+							<a href="#" data-toggle="modal" data-target="#letsSankalpModal">View more</a>
 						</figcaption>
 					</figure>
 				</div>
@@ -297,11 +299,11 @@ title: Home
 			<div class="col-md-4">
 				<div class="ot-portfolio-item">
 					<figure class="effect-bubba">
-						<img src="/assets/img/portfolio/EpsomUI.png" alt="EpsomUI" height="520" width="780" class="img-responsive"/>
+						<img src="/assets/img/portfolio/EpsomUI.png" alt="EpsomUI" class="img-responsive portfolio-image"/>
 						<figcaption>
 							<h2>EpsomUI</h2>
 							<p>Unit Testing Suite for Webpages</p>
-							<a href="#" data-toggle="modal" data-target="#Modal-6">View more</a>
+							<a href="#" data-toggle="modal" data-target="#epsomuiModal">View more</a>
 						</figcaption>
 					</figure>
 				</div>
@@ -315,7 +317,7 @@ title: Home
 	<div class="container">
 		<div class="row text-justify">	
 			<div class="col-md-12">	
-				<div class="section-title" style="padding-bottom:30px; padding-left:10px; padding-left:10px">			
+				<div class="section-title text-only-section-title">			
 					<h2 class="text-center">Achievements</h2>
 				</div>
 				
@@ -339,33 +341,33 @@ title: Home
 </section>
 		
 <!-- contact section -->
-<section id="contact" style="background: url('/assets/img/backgrounds/contact_bg.jpg'); background-repeat: none; background-attachment: scroll; background-position: center center; background-size: cover">
+<section id="contact" class="contact-section-background">
 	<div class="container">
 		<div class="row text-center">
 			<div class="col-md-12">
 				<div class="section-title">
-					<h2 style="color:white">Get in Touch</h2>
-					<p style="color:white"></p>
+					<h2 class="light-text">Get in Touch</h2>
+					<p class="light-text"></p>
 				</div>
-				<p style="color: white">I am open to all kinds of queries, questions and suggestions. If you want to get in touch with me, you can write to me at <b>amey@ameykamat.in</b>.</p>
-				<p style="color: white">Alternatively you can mail me at <b>kamat.amey@outlook.com</b>.</p>
-				<p style="color: white">I am also available on social networks, you connect with me on:</p>
+				<p class="light-text">I am open to all kinds of queries, questions and suggestions. If you want to get in touch with me, you can write to me at <b>{{ site.author_email }}</b>.</p>
+				<p class="light-text">Alternatively you can mail me at <b>{{ site.author_sec_email }}</b>.</p>
+				<p class="light-text">I am also available on social networks, you connect with me on:</p>
 				<p>
 					<!-- social links -->
 					<!--<a rel="me" href="{{ site.author_facebook }}" target="_blank">
-						<img src="/assets/img/social/small/facebook.png" alt="Facebook" style="height:32px; width:32px; background: none"/>
+						<img src="/assets/img/social/small/facebook.png" alt="Facebook" class="social-icon-sm" />
 					</a>-->
 					<a rel="me" href="{{ site.author_twitter }}" target="_blank">
-						<img src="/assets/img/social/small/twitter.png" alt="Twitter" height="32px" width="32px" style="background: none; margin:3px"/>
+						<img src="/assets/img/social/small/twitter.png" alt="Twitter" class="social-icon-sm" />
 					</a>
 					<a rel="me" href="{{ site.author_linkedin }}" target="_blank">
-						<img src="/assets/img/social/small/linkedin.png" alt="Linkedin" height="32px" width="32px" style="background: none; margin:3px"/>
+						<img src="/assets/img/social/small/linkedin.png" alt="Linkedin" class="social-icon-sm" />
 					</a>
 					<!--<a rel="me" href="{{ site.author_gplus }}" target="_blank">
-						<img src="/assets/img/social/small/google_plus.png" alt="Google Plus" style="height:32px; width:32px; background: none"/>
+						<img src="/assets/img/social/small/google_plus.png" alt="Google Plus" class="social-icon-sm" />
 					</a>-->
 					<a rel="me" href="{{ site.author_github }}" target="_blank">
-						<img src="/assets/img/social/small/github.png" alt="Github" height="32px" width="32px" style="background: none"; margin:3px/>
+						<img src="/assets/img/social/small/github.png" alt="Github" class="social-icon-sm" />
 					</a>
 				</p>
 			</div>
@@ -374,57 +376,68 @@ title: Home
 </section>
 		
 <!-- cricsim modal -->
-<div class="modal fade" id="Modal-1" tabindex="-1" role="dialog" aria-labelledby="Modal-label-1">
+<div class="modal fade" id="cricSimModal" tabindex="-1" role="dialog" aria-labelledby="cricSimModalLabel">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="Modal-label-1">Cricsim</h4>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="cricSimModalLabel">Cricsim</h4>
 			</div>
 			<div class="modal-body">
-				<img src="/assets/img/portfolio/cricsim.png" alt="CricSim" height="520" width="780" class="img-responsive" />
-				<p class="text-justify"><span class="badge">C++</span> <span class="badge">Artificial Intelligence</span></p>
-					<p class="text-justify">
-						<i class="fa fa-user"></i> Personal Project &emsp;&emsp;<i class="fa fa-calendar"></i> Upcoming<br><br>
-						<b>Description: </b><br>
-						This is reincarnation of Amey's childhood amature project of developing 
-						a text based cricket simulator as realistic as possible. Original simulator was
-						built on QBasic 32-bit compiler.
-					</p>
-				</div>
-				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				</div>
+				<img src="/assets/img/portfolio/cricsim.png" alt="CricSim" class="img-responsive portfolio-modal-image" />
+				<p class="text-justify">
+					<span class="badge">C++</span> 
+					<span class="badge">Artificial Intelligence</span>
+				</p>
+				<p class="text-justify">
+					<i class="fa fa-user"></i> Personal Project &emsp;&emsp;
+					<i class="fa fa-calendar"></i> Upcoming<br><br>
+					<b>Description: </b><br>
+					This is reincarnation of Amey's childhood amature project of developing 
+					a text based cricket simulator as realistic as possible. Original simulator was
+					built on QBasic 32-bit compiler.
+				</p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 			</div>
 		</div>
 	</div>
 </div>
 
 <!-- project x modal -->
-<div class="modal fade" id="Modal-2" tabindex="-1" role="dialog" aria-labelledby="Modal-label-2">
+<div class="modal fade" id="projectxModal" tabindex="-1" role="dialog" aria-labelledby="projectxModalLabel">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="Modal-label-2">ProjectX</h4>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="projectxModalLabel">ProjectX</h4>
 			</div>
 			<div class="modal-body">
-				<img src="/assets/img/portfolio/projectX.jpg" alt="Project X" height="520" width="780" class="img-responsive" />
-				<p class="text-justify"><span class="badge">C++ </span> <span class="badge">Artificial Intelligence</span> <span class="badge">Rapid Prototyping</span></p>
-					<p class="text-justify">
-						<i class="fa fa-user"></i> National Institute of Technology Goa &emsp;&emsp;<i class="fa fa-calendar"></i> May 2015 - Jul 2015<br><br>
-						<b>Description: </b><br>
-						ProjectX is an automated system that suggests the steps of manufacturing a 3D models using 3-Axis CNC.
-						System generates sequence of setup orientations and G-codes for respective orientation.
-						It involves principles of Artificial Intelligence and Computer Vision.
-						<br><br>
-						This work was accepted in IEEE International Conference on Industrial Technology 2016 (ICIT2016) 
-						at Taipei, Taiwan.
-						<br><br>
-						<a href="https://github.com/TanayGahlot/ToolpathGenerator" target="_blank">ProjectX Repository</a><br>
-						<a href="http://projectx.co.in" target="_blank">ProjectX Demo</a>
-					</p>
-				</div>
+				<img src="/assets/img/portfolio/projectX.jpg" alt="Project X" class="img-responsive portfolio-modal-image" />
+				<p class="text-justify">
+					<span class="badge">C++ </span> 
+					<span class="badge">Artificial Intelligence</span> 
+					<span class="badge">Rapid Prototyping</span>
+				</p>
+				<p class="text-justify">
+					<i class="fa fa-user"></i> National Institute of Technology Goa &emsp;&emsp;
+					<i class="fa fa-calendar"></i> May 2015 - Jul 2015<br><br>
+					<b>Description: </b><br>
+					ProjectX is an automated system that suggests the steps of manufacturing a 3D models using 3-Axis CNC.
+					System generates sequence of setup orientations and G-codes for respective orientation.
+					It involves principles of Artificial Intelligence and Computer Vision.
+					<br><br>
+					This work was accepted in IEEE International Conference on Industrial Technology 2016 (ICIT2016) 
+					at Taipei, Taiwan.
+					<br><br>
+					<a href="https://github.com/TanayGahlot/ToolpathGenerator" target="_blank">ProjectX Repository</a><br>
+					<a href="http://projectx.co.in" target="_blank">ProjectX Demo</a>
+				</p>
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -434,22 +447,32 @@ title: Home
 </div>
 
 <!-- ruralivrs modal -->
-<div class="modal fade" id="Modal-3" tabindex="-1" role="dialog" aria-labelledby="Modal-label-3">
+<div class="modal fade" id="ruralivrsModal" tabindex="-1" role="dialog" aria-labelledby="ruralivrsModalLabel">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="Modal-label-3">RuralIVRS</h4>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="ruralivrsModalLabel">RuralIVRS</h4>
 			</div>
 			<div class="modal-body">
-				<img src="/assets/img/portfolio/ruralict.jpg" alt="RuralIVRS" height="520" width="780" class="img-responsive" style="width:100%"/>
-				<p class="text-justify"><span class="badge">Spring</span> <span class="badge">Java</span> <span class="badge">IVRS</span> <span class="badge">MVC Architecture</span> <span class="badge">MySQL</span> <span class="badge">Thymeleaf</span></p>
+				<img src="/assets/img/portfolio/ruralict.jpg" alt="RuralIVRS" class="img-responsive portfolio-modal-image" />
 				<p class="text-justify">
-					<i class="fa fa-user"></i> Indian Institute of Technology Bombay &emsp;&emsp;<i class="fa fa-calendar"></i> May 2015 - Jul 2015<br><br>
+					<span class="badge">Spring</span> 
+					<span class="badge">Java</span> 
+					<span class="badge">IVRS</span> 
+					<span class="badge">MVC Architecture</span> 
+					<span class="badge">MySQL</span> 
+					<span class="badge">Thymeleaf</span>
+				</p>
+				<p class="text-justify">
+					<i class="fa fa-user"></i> Indian Institute of Technology Bombay &emsp;&emsp;
+					<i class="fa fa-calendar"></i> May 2015 - Jul 2015<br><br>
 					<b>Description: </b><br>
 					RuralIVRS is an Interactive Voice Response System(IVRS) targeted to the low end consumers and producers. 
 					IVRS generates a voice response that is used to generate bill. 
-					This project is being guided by Prof. Ganesh Ramakrishnan of CSE Department, IITB. 
+					This project is being guided by Prof. Ganesh Ramakrishnan of CSE Department, IITB.
 					<br><br>
 					The system is being developed in Spring Framework, Java, Kookoo Telephony Engine, MySQL, 
 					Thymeleaf, Bootstrap and AngularJS.
@@ -465,18 +488,25 @@ title: Home
 </div>
 
 <!-- web development modal -->
-<div class="modal fade" id="Modal-4" tabindex="-1" role="dialog" aria-labelledby="Modal-label-4">
+<div class="modal fade" id="webDevelopmentModal" tabindex="-1" role="dialog" aria-labelledby="webDevelopmentModalLabel">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="Modal-label-4">Web Development</h4>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="webDevelopmentModalLabel">Web Development</h4>
 			</div>
 			<div class="modal-body">
-				<img src="/assets/img/portfolio/webDevelopment.png" alt="Web Development" height="520" width="780" class="img-responsive" />
-				<p class="text-justify"><span class="badge">HTML/CSS/JS</span> <span class="badge">AngularJS</span> <span class="badge">UI/UX</span></p>
+				<img src="/assets/img/portfolio/webDevelopment.png" alt="Web Development" class="img-responsive portfolio-modal-image" />
 				<p class="text-justify">
-					<i class="fa fa-user"></i> National Institute of Technology &emsp;&emsp;<i class="fa fa-calendar"></i> Oct 2014 - Feb 2015<br><br>
+					<span class="badge">HTML/CSS/JS</span> 
+					<span class="badge">AngularJS</span> 
+					<span class="badge">UI/UX</span>
+				</p>
+				<p class="text-justify">
+					<i class="fa fa-user"></i> National Institute of Technology &emsp;&emsp;
+					<i class="fa fa-calendar"></i> Oct 2014 - Feb 2015<br><br>
 					<b>Description: </b><br>
 					Amey's past web development includes website for Technival 2014, NIT Goa’s first ever techfest. 
 					He also designed websites for Online Departmental Elections (2015)
@@ -493,18 +523,26 @@ title: Home
 </div>
 
 <!-- letssankalp modal -->
-<div class="modal fade" id="Modal-5" tabindex="-1" role="dialog" aria-labelledby="Modal-label-5">
+<div class="modal fade" id="letsSankalpModal" tabindex="-1" role="dialog" aria-labelledby="letsSankalpModalLabel">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="Modal-label-5">LetsSankalp</h4>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="letsSankalpModalLabel">LetsSankalp</h4>
 			</div>
 			<div class="modal-body">
-				<img src="/assets/img/portfolio/letsSankalp.png" alt="LetsSankalp" height="520" width="780" class="img-responsive" />
-				<p class="text-justify"><span class="badge">Python</span> <span class="badge">UI/UX</span> <span class="badge">Google App Engine</span> <span class="badge">Crowd Sourcing</span></p>
+				<img src="/assets/img/portfolio/letsSankalp.png" alt="LetsSankalp" class="img-responsive portfolio-modal-image" />
 				<p class="text-justify">
-					<i class="fa fa-user"></i> Connectree &emsp;&emsp;<i class="fa fa-calendar"></i> May 2014 - May 2015<br><br>
+					<span class="badge">Python</span> 
+					<span class="badge">UI/UX</span> 
+					<span class="badge">Google App Engine</span> 
+					<span class="badge">Crowd Sourcing</span>
+				</p>
+				<p class="text-justify">
+					<i class="fa fa-user"></i> Connectree &emsp;&emsp;
+					<i class="fa fa-calendar"></i> May 2014 - May 2015<br><br>
 					<b>Description: </b><br>
 					LetsSankalp was an innovative idea to design an interface between NGOs 
 					and their potential donors/investors. The web app generates 
@@ -524,18 +562,25 @@ title: Home
 </div>
 
 <!-- epsomui model -->
-<div class="modal fade" id="Modal-6" tabindex="-1" role="dialog" aria-labelledby="Modal-label-6">
+<div class="modal fade" id="epsomuiModal" tabindex="-1" role="dialog" aria-labelledby="epsomuiModalLabel">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
 				<h4 class="modal-title" id="Modal-label-5">EpsomUI</h4>
 			</div>
 			<div class="modal-body">
-				<img src="/assets/img/portfolio/EpsomUI.png" alt="EposomUI" height="520" width="780" class="img-responsive" />
-				<p class="text-justify"><span class="badge">Node.js</span> <span class="badge">PhantomJS</span> <span class="badge">Unit Testing</span></p>
+				<img src="/assets/img/portfolio/EpsomUI.png" alt="EposomUI" class="img-responsive portfolio-modal-image" />
 				<p class="text-justify">
-					<i class="fa fa-user"></i> Persistent Systems Limited &emsp;&emsp;<i class="fa fa-calendar"></i> May 2014 - Jul 2014<br><br>
+					<span class="badge">Node.js</span> 
+					<span class="badge">PhantomJS</span> 
+					<span class="badge">Unit Testing</span>
+				</p>
+				<p class="text-justify">
+					<i class="fa fa-user"></i> Persistent Systems Limited &emsp;&emsp;
+					<i class="fa fa-calendar"></i> May 2014 - Jul 2014<br><br>
 					<b>Description: </b><br>
 					EpsomUI was developed during two months internship while working as Project Trainee in 
 					Persistent Systems Limited.<br><br>

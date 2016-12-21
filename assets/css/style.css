@@ -15,8 +15,9 @@ a, a:hover, a:focus, a:active, a.active{outline:0;}
 .videoWrapper {position: relative;padding-bottom: 56.25%;padding-top: 25px;height: 0;margin:20px;}
 .videoWrapper iframe {position: absolute;top: 0;left: 0;width: 100%;height: 100%;}
 section{padding:70px 0;}
-.navbar-default{background-color:#222;border-color:transparent}
+.navbar-default{background-color:#222;border-color:transparent;}
 .navbar-default .navbar-brand{color:#fff;font-family:"Montserrat",sans-serif;padding:0px;}
+.navbar-brand{margin:10px 0px 0px 0px;}
 .navbar-default .navbar-brand:hover,.navbar-default .navbar-brand:focus,.navbar-default .navbar-brand:active,.navbar-default .navbar-brand.active{color:#fec503}
 .navbar-default .navbar-collapse{border-color:rgba(255,255,255,.02)}
 .navbar-default .navbar-toggle{background-color:#fed136;border-color:#fed136}
@@ -124,3 +125,16 @@ and (max-width:480px){#back-top{position:fixed;bottom:10px;right:30px;}
 #back-top a{width:40px;height:40px;}
 #back-top i{margin-top:7px;font-size:20px;}
 }
+
+/* Custom classes */
+.navbar-logo{height:30px;width:30px;}
+.frontpage-logo{height:60px;width:64px;vertical-align:0%;}
+.btn-push-down{color:white;}
+.portrait-photo{height:312px;width:250px;border-top-left-radius:20px;border-bottom-right-radius:20px;}
+.portfolio-image{height:100%;width:100%;}
+.text-only-section-title{padding-bottom:30px;padding-left:10px;padding-left:10px;}
+.contact-section-background{background:url('/assets/img/backgrounds/contact_bg.jpg');background-repeat:none;background-attachment:scroll;background-position:center center;background-size:cover}
+h2.light-text, p.light-text{color:white;}
+.social-icon-lg{height:48px;width:48px;background:none;margin:5px;}
+.social-icon-sm{height:32px;width:32px;background:none;margin:3px;}
+.portfolio-modal-image{width:100%;}
