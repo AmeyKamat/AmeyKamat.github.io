@@ -1,0 +1,38 @@
+---
+layout: post
+title: Event Notifier - One Click Solution to my Forgetfulness
+---
+
+<p>
+I forget numbers easily. Whatever I do, numbers simply refuse to stay in my head. Bithdays are the biggest culprits. For infinite number of times I have been talk of the town for forgetting someone's birthday. Trust me! That's really humiliating. That is where technology came to my help.
+</p><br>
+<!--excerpt-->
+
+<div class="row text-center" style="padding:20px">
+<img class="img-responsive" alt="calendar" style="width:100%" src="/assets/img/blog/2017-6-28-event-notifier.jpg">
+<p class="text-center" style="font-size:10pt">Source: https://pixabay.com/en/calendar-year-calendar-office-dates-1255952/</p>
+</div>
+
+<p>
+Offcourse there are many different solutions already available on web for this, but I did't want to use it. For one, you need to be very careful while giving away your loved ones information freely to third party in the age of WannaCry, and two, I wanted to hae complete control over how one is notified. So I began a quest to write my own event notifier.
+</p><br>
+
+<p>
+So this was the idea. The nodejs script takes 3 inputs: A. list of subscribers to the events, B. list of events, and C. template of the reminder. I wanted input for the notifier to be very simple. No complicated databases, no execution of long queries. So I went for simple json file for list of subscribers and events. Script filters this list for required days events, and sends consolidated reminders as emails to its subscribers.
+</p>
+
+<p>
+Simple isn't it? Now I wanted a template engine for rendering email messages, and a provider to send those emails. I used <a href="http://handlebarsjs.com/" target="_blank" rel="nofollow">handlebars</a> for template rendering. It has nice support for template variables, and has plethora of helpers to transform those variables. Now I could substitute values like subscriber name, eventee, years since event occured (for which I wrote a custom helper) etc. So the first problem was solved. Now I wanted a provider who could send emails for me. <a href="https://www.mailgun.com/" target="_blank" rel="nofollow">Mailgun</a> helped me in this. It has huge quota of initial free mails which hardly gets exhausted for small usage. One just needs to register on their website and consume their API directly.
+</p>
+
+<p>
+Last phase was to make this app customizable as possible. I wanted every piece of external input to be provided through configuration file. For this I used property-reader module of node. I did not want property files to lie inside the deployment so I deviced 2 level configuration, where first level of configuration lies inside deployment with information such as location of data files and location of property file. Now all data and property can lie outside the deployment and in such a way you canhave multiple deployments of same app on same server. 
+</p>
+
+<p>
+This script now had to be called form a machine that had to be up continuously with script being called periodically. Hence I deployed the script on Amazon Web Service instance and used Unix cron jobs to call the script periodically.
+</p>
+
+<p>
+And That's it! My event notifier serves me well! In case you want to check it out, I have written extensive user manual for the script. Also, the code is open source! <a href="https://github.com/AmeyKamat/EventNotifier" target="_blank" rel="nofollow">Check it out here.</a> Gone are the days of humiliations!
+</p>
