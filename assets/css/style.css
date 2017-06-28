@@ -47,6 +47,7 @@ header .intro-text .intro-heading{text-transform:lowercase;font-weight:600;font-
 }
 .section-title h2{font-size:34px;text-transform:uppercase;}
 .section-title p{font-size:15px;font-weight:300;line-height:25px;margin:20px 100px 60px 100px;}
+.subsection-title h3{font-size:20px;text-transform:uppercase;margin:0px 100px 60px 0px;}
 .mz-module-about h3{font-weight:500;font-size:17px;text-transform:uppercase;color:#3A3A3A;letter-spacing:2px;margin-bottom:20px;}
 .mz-module-about p{font-size:14px;font-weight:300;line-height:22px;color:#969696;}
 .ot-circle{height:95px;width:95px;text-align:center;line-height:98px;color:#3E3E3E;border-radius:100px;margin:0 2px 4px;font-size:31px;}
