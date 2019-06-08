@@ -40,8 +40,8 @@ header .intro-text{padding-top:150px;padding-bottom:50px;}
 header .intro-text .intro-lead-in{font-weight:600;font-size:22px;line-height:22px;margin-bottom:25px;}
 @media (min-width:768px){header .intro-text .intro-lead-in{font-weight:600;font-size:30px;line-height:40px;margin-bottom:25px;}
 }
-header .intro-text .intro-heading{text-transform:lowercase;font-weight:600;font-size:45px;line-height:50px;margin-bottom:25px;color:#fff}
-@media (min-width:768px){header .intro-text .intro-heading{text-transform:lowercase;font-weight:700;font-size:55px;line-height:75px;margin-bottom:50px;}
+header .intro-text .intro-heading{font-weight:600;font-size:45px;line-height:50px;margin-bottom:20px;color:#fff}
+@media (min-width:768px){header .intro-text .intro-heading{font-weight:700;font-size:55px;line-height:75px;margin-bottom:50px;}
 }
 @media (min-width:768px){.article{margin-left:100px;margin-right:100px}
 }
@@ -140,3 +140,9 @@ h2.light-text, p.light-text{color:white;}
 .social-icon-lg{height:48px;width:48px;background:none;margin:5px;}
 .social-icon-sm{height:32px;width:32px;background:none;margin:3px;}
 .portfolio-modal-image{width:100%;}
+.hot-news{margin-top:-1em;font-size:1.2em;}
+.hot-news a{color: #fec503;}
+.hot-news a:hover{color: #fed74f;}
+.skill-box{}
+.skill-score{font-size:3em;font-weight:bold;padding:0.2em;border:1px solid black;border-bottom:transparent;}
+.skill{font-size:1.5em;padding:1em}
