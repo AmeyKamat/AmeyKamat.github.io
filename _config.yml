@@ -1,7 +1,7 @@
 title: Amey Kamat - Fullstack Developer
-description: Amey Kamat is a Computer Engineer and Programmer based in Ponda, Goa, India. He works in the field of Artificial Intelligence, Software Engineering and Web Development
+description: Amey Kamat is a Computer Engineer and Programmer based in Bangalore, India. He works in the field of Software Engineering and Web Development.
 author: Amey Kamat
-copyright: © Amey Kamat, 2019
+copyright: © Amey Kamat, 2020
 author_email: amey@ameykamat.in
 author_linkedin: https://www.linkedin.com/in/ameykamat/
 author_goodreads: https://www.goodreads.com/user/show/24617228-amey-kamat
@@ -10,7 +10,7 @@ category_dir: /
 url: http://www.ameykamat.in/
 markdown: kramdown
 excerpt_separator: <!--excerpt-->
-gems: [jekyll-paginate, jekyll-sitemap]
+plugins: [jekyll-paginate, jekyll-sitemap]
 permalink: /blog/:year/:month/:day/:title/
 paginate: 5
 paginate_path: "/blog/page:num/"

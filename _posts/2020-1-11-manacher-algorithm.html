@@ -1,0 +1,75 @@
+---
+layout: post
+title: Manacher Algorithm
+---
+
+<p>
+A couple of days ago, during my surfing I found a clever algorithm. Case in point: longest palindromic substring. A naive algorithm might calculate a palindromic string in O(n<sup>2</sup>) time. That is  for each palindromic centre will go ahead and check largest palidrome possible, and it can seem on the surface that this brute force algorithm is the most optimal one. However there happens to be another brilliant algorithm that beats this assumption. It is called Manacher Algorithm.
+</p><br />
+<!--excerpt-->
+
+<p>
+Manacher algorithm is classic example of when dynamic programming concepts are used in smartly. This algorithm tries to capture the information used to calculate palindrome at previous centre and uses it to calculate next.
+</p><br/>
+
+<p>
+Consider following string:
+</p><br />
+
+<code><pre>
+index:      0         1         2         3         4           5           6           7           8           9          10
+string:     b         a         b         c         b           a           b           c           b           a           c
+centre: 0   1    2    3    4    5    6    7    8    9    10    11    12    13    14    15    16    17    18    19    20    21    22
+palLen: 0   1    0    3    0    1    0    7    0    1     0     9     0     1     0     3     0     1     0     1     0     1     0    
+</pre></code><br />
+
+<p>
+Technically there can be <i>2*n+1</i> centres of palindromes since palindrome can be centered and <i>n</i> characters and <i>n+1</i> spaces between characters. The array palLen defines size of palindrome at particular position. Our aim is to calculate this <i>palLen</i> array.
+</p><br />
+
+<p>
+Before jumping into the fine print of the algorithm, let us define some variables.<br />
+<strong><i>C</i></strong> : current centre of palindrome. (in our case say it is center 11; <i>palLen[C] = 9)</i><br />
+<strong><i>L</i></strong> : left end of palindrome centered at <i>C</i> (i.e. 3 in our case)<br />
+<strong><i>R</i></strong> : right end of palindrome centered at <i>C</i> (i.e. 19 in our case)<br />
+<strong><i>pRight</i></strong> : all centers between <i>C</i> & <i>R</i> (<i>R</i> inclusive)<br />
+<strong><i>pLeft</i></strong> : counterpart of pRight on left side<br />
+<strong><i>distToEdge</i></strong> : <i>R - pRight - 1</i>
+</p><br />
+
+<p>
+One thing that readers can note is that for every pLeft, exatly same sequence of characters get mirrored at <i>pRight</i>. Take for example <i>pLeft</i> = 7, string “bcb” at index 2, 3, 4 is mirrored at 6, 7, 8.
+</p><br />
+
+<p>
+Based on length of this palindrome centered at <i>pLeft</i> and corresponding position of pRight, we can have 3 distict cases.
+</p><br />
+
+<p>
+<strong>Case 1: <i>palLen[pLeft] < distToEdge</i></strong> <br />
+Consider case of <i>pRight = 13</i>, <i>pLeft = 9</i> and <i>distToEdge = 5</i>.<br />
+In this case we can certainly be sure that entire palidrome mirrored at pRight remains within bounds of R.
+Hence <i>palLen[pRight] = palLen[pLeft]</i>. <i>C</i> will not be updated
+</p><br />
+
+<p>
+<strong>Case 2: <i>palLen[pLeft] > distToEdge</i></strong><br />
+Consider case of <i>pRight = 15</i>, <i>pLeft = 7</i> and <i>distToEdge = 3</i><br />
+In this case, we are sure that palindrome at <i>pLeft</i> will be mirrored at <i>pRight</i>, but only upto <i>R</i>. This is because, if it had extended beyond that, palindrome at <i>C</i> would have expanded too and position of <i>R</i> would  have shifted further right.<br />
+Hence <i>palLen[pRight] = distToEdge</i>. <i>C</i> Will not change
+</p><br />
+
+<p>
+<strong>Finally Case 3: <i>palLen[pLeft] = distToEdge</i></strong><br />
+In this case, we are sure that palindrome at <i>pLeft</i> will be mirrored at <i>pRight</i>, but we are not sure if palindrome at <i>pRight</i> extends beyond that. Hence beyond length of <i>palLen[pLeft]</i>, we need to check if palindrome at <i>pRight</i> extends or not manually.<br />
+Hence <i>palLen[pRight] = palLen[pLeft] + extended_length</i>. <i>C</i> will now be equal to <i>pRight</i>.<br />
+</p><br />
+
+<p>
+Considering all these cases, if we loop over <i>pRight</i> from <i>0</i> to <i>2*n</i>, and update <i>palLen</i> accordingly, what is left finally is to find maximum of <i>palLen</i>.
+</p><br />
+
+<p>
+Readers can refer to <a href="https://github.com/AmeyKamat/CompetitiveProgramming/blob/master/alg/manacher_algorithm.cpp" target="_blank" rel="nofollow">my C++ implementation of Manacher Alogorithm</a> or check <a href="https://tarokuriyama.com/projects/palindrome2.php" target="_blank" rel="nofollow">this fantastic explaination of the algorithm</a> which inspires this post.
+</p>
+
