@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/static/css/main.f9fd9a11.chunk.css",
-    "main.js": "/static/js/main.621f276c.chunk.js",
-    "main.js.map": "/static/js/main.621f276c.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.6edb8b07.js",
-    "runtime-main.js.map": "/static/js/runtime-main.6edb8b07.js.map",
+    "main.css": "/static/css/main.5f7482e4.chunk.css",
+    "main.js": "/static/js/main.dd5e11dc.chunk.js",
+    "main.js.map": "/static/js/main.dd5e11dc.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.4305a521.js",
+    "runtime-main.js.map": "/static/js/runtime-main.4305a521.js.map",
     "static/css/2.004e36c4.chunk.css": "/static/css/2.004e36c4.chunk.css",
-    "static/js/2.45e3763e.chunk.js": "/static/js/2.45e3763e.chunk.js",
-    "static/js/2.45e3763e.chunk.js.map": "/static/js/2.45e3763e.chunk.js.map",
-    "static/js/3.4fa1fdde.chunk.js": "/static/js/3.4fa1fdde.chunk.js",
-    "static/js/3.4fa1fdde.chunk.js.map": "/static/js/3.4fa1fdde.chunk.js.map",
+    "static/js/2.7686cf02.chunk.js": "/static/js/2.7686cf02.chunk.js",
+    "static/js/2.7686cf02.chunk.js.map": "/static/js/2.7686cf02.chunk.js.map",
+    "static/js/3.f5abd825.chunk.js": "/static/js/3.f5abd825.chunk.js",
+    "static/js/3.f5abd825.chunk.js.map": "/static/js/3.f5abd825.chunk.js.map",
     "index.html": "/index.html",
     "static/css/2.004e36c4.chunk.css.map": "/static/css/2.004e36c4.chunk.css.map",
-    "static/css/main.f9fd9a11.chunk.css.map": "/static/css/main.f9fd9a11.chunk.css.map",
-    "static/js/2.45e3763e.chunk.js.LICENSE.txt": "/static/js/2.45e3763e.chunk.js.LICENSE.txt",
+    "static/css/main.5f7482e4.chunk.css.map": "/static/css/main.5f7482e4.chunk.css.map",
+    "static/js/2.7686cf02.chunk.js.LICENSE.txt": "/static/js/2.7686cf02.chunk.js.LICENSE.txt",
     "static/media/amey_kamat.fa9b5795.jpeg": "/static/media/amey_kamat.fa9b5795.jpeg",
     "static/media/fsm.1e9c30cb.jpg": "/static/media/fsm.1e9c30cb.jpg",
     "static/media/index.css": "/static/media/header_bg.8f183cf7.jpeg",
@@ -23,10 +23,10 @@
     "static/media/ruralict.de650b38.jpg": "/static/media/ruralict.de650b38.jpg"
   },
   "entrypoints": [
-    "static/js/runtime-main.6edb8b07.js",
+    "static/js/runtime-main.4305a521.js",
     "static/css/2.004e36c4.chunk.css",
-    "static/js/2.45e3763e.chunk.js",
-    "static/css/main.f9fd9a11.chunk.css",
-    "static/js/main.621f276c.chunk.js"
+    "static/js/2.7686cf02.chunk.js",
+    "static/css/main.5f7482e4.chunk.css",
+    "static/js/main.dd5e11dc.chunk.js"
   ]
 }
