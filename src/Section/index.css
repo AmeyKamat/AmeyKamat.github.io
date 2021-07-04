@@ -1,0 +1,13 @@
+.full-screen-container {
+    height: 100vh;
+    margin: 0em;
+}
+
+.container {
+    margin: 0em;
+}
+
+.innerGrid {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}

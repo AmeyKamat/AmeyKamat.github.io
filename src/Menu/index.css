@@ -1,0 +1,34 @@
+.background-on-scroll {
+    background: #3f51b5;
+}
+
+.background-on-top {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.logo {
+    font-family: 'Rochester', cursive !important;
+    flex: auto;
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+.mobile-menu {
+    display: none !important;
+}
+
+.menu-item {
+    color: #ffffff !important;
+}
+
+@media only screen and (max-width: 600px) {
+    .mobile-menu {
+        display: flex !important;
+    }
+
+    .desktop-menu {
+        display: none !important;
+    }
+
+}

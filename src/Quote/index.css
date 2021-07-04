@@ -1,0 +1,61 @@
+.quote-box {
+    height: 20rem;
+    text-align: center;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.quote-text {
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.54);
+    font-family: 'Rochester', cursive !important;
+    text-align: center;
+    padding-top: 4rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+.quote-person {
+    font-size: 1rem;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.54);
+    text-align: center;
+    padding-top: 3rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+}
+
+.quote-designation {
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.54);
+    text-align: center;
+    padding-top: 1rem;
+}
+
+@media only screen and (max-width: 600px) {
+    .quote-box {
+        height: 20rem;
+    }
+
+    .quote-text {
+        font-size: 1rem;
+        font-weight: bold;
+        padding-top: 2rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .quote-person {
+        font-size: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .quote-designation {
+        font-size: 0.9rem;
+        padding-top: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
