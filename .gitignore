@@ -1,3 +1,4 @@
-node_modules/
+website/node_modules/
+website/build/
 .vscode
 .DS_Store
