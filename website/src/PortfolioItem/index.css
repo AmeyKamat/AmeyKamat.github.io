@@ -1,0 +1,52 @@
+.portfolio-item {
+    margin: 4px;
+    height: 16em !important;
+    background-color: #f5f5f5;
+}
+
+.project-box {
+    width: 90%;
+    display: inline-block;
+    margin: 5%;
+    height: 80%;
+    border: solid 0px white;
+    transition: border-width 0.5s linear;
+}
+
+.project-box:hover {
+    border-width: 1px;
+}
+
+.project-title {
+    color: #3f51b5;
+    font-weight: bold;
+}
+
+.project-one-liner {
+    padding-top: 1rem;
+    font-size: 0.5rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: #ffffff;
+}
+
+.project-tags {
+    padding-top: 1rem;
+}
+
+.project-tag {
+    color: #3f51b5 !important;
+    border-color: #3f51b5 !important;
+    margin: 0.1rem !important;
+}
+
+.project-organisation {
+    align-items: right;
+    display: 'flex';
+    flex-wrap: 'wrap1'
+}
+
+.org-icon {
+    color: #3f51b5 !important;
+    padding-left: 0.5rem;
+}

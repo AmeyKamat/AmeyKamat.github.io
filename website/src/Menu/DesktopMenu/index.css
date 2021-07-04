@@ -1,0 +1,15 @@
+.background-on-scroll {
+    background: #3f51b5;
+}
+
+.background-on-top {
+    background: transparent !important;
+    box-shadow: none !important;
+}
+
+.logo {
+    font-family: 'Rochester', cursive !important;
+    flex: auto;
+    padding-left: 1em;
+    padding-right: 1em;
+}

@@ -1,0 +1,39 @@
+.landing-screen {
+    background-image:url(header_bg.jpeg);
+    height: 100vh;
+    background-repeat: none;
+    background-attachment: scroll;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    text-align: center;
+    color: #fff;
+    margin: 0em
+}
+
+.intro-title {
+    padding-top: 30vh;
+    font-family: 'Rochester', cursive !important;
+    font-size: 7em;
+}
+
+.intro-description {
+    padding-top: 1em;
+    font-size: 2em;
+}
+
+.social-icons {
+    padding-top: 1em;
+}
+
+@media only screen and (max-width: 600px) {
+    .intro-title {
+        font-size: 4em;
+    }
+
+    .intro-description {
+        font-size: 1em;
+    }
+}
