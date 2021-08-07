@@ -1,5 +1,5 @@
 import React from 'react'
-import { Grid, Container } from "@material-ui/core"
+import { Grid, Container, Link } from "@material-ui/core"
 
 import "./index.css"
 import SocialMediaTray from '../SocialMediaTray'
@@ -25,7 +25,7 @@ const Footer = () => {
         </Grid>
         <Grid container alignItems="flex-end" justify="center" className="copyright-notice">
             {
-                `© AMEY KAMAT, ${new Date().getFullYear()}`
+                `© 2021, Amey Kamat. ALL RIGHTS RESERVED`
             }
         </Grid>
     </Container>

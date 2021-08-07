@@ -22,7 +22,7 @@
     color: #ffffff !important;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 850px) {
     .mobile-menu {
         display: flex !important;
     }
