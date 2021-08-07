@@ -2,6 +2,8 @@
 
 This is the live version on my website deployed at [ameykamat.in](https://ameykamat.in)
 
+NOTE: THIS IS NOT AN OPEN SOURCE PROJECT. PLEASE READ GUIDELINES FOR USING THIS TEMPLATE FOR YOUR PERSONAL USE.
+
 ## How to setup this project
 
 Before setting up the project, you will need following dependancies.
