@@ -44,5 +44,9 @@ Website uses following color scheme.
 
 - Use of this template is NOT permitted for any commercial or business purpose.
 - Modification and/or redistribution of this template in any form (apart from changing colour scheme and content) is not permitted.
-- Any instance of personal use MUST provide clear visible notice on the footer describing source of this template and mentioning credit.
-- Users of this template are barred from using same brand colour schemes as in Styling section above while using this template. 
+- Any instance of personal use MUST provide clear and visible notice on the footer describing source of this template and mentioning credit along with the links as follows on every page of the website where the template is used: 
+
+[Template](https://github.com/AmeyKamat/AmeyKamat.github.io) by [Amey Kamat](https://ameykamat.in)
+
+- Following images are closed source and copyrighted and cannot be used in any modified or original form and cannot be used without written permission from us: [1](https://github.com/AmeyKamat/AmeyKamat.github.io/blob/master/website/src/LandingScreen/header_bg.jpeg), [2](https://github.com/AmeyKamat/AmeyKamat.github.io/blob/master/website/src/Portfolio/projects/fsm.jpg), [3](https://github.com/AmeyKamat/AmeyKamat.github.io/blob/master/website/src/Portfolio/projects/letssankalp.png), [4](https://github.com/AmeyKamat/AmeyKamat.github.io/blob/master/website/src/Portfolio/projects/projectx.jpg), [5](https://github.com/AmeyKamat/AmeyKamat.github.io/blob/master/website/src/About/amey_kamat.jpeg)
+- Users of this template are barred from using same brand colour schemes as in Styling section above while using this template.
